@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Star Beauty Supply &#8212; Your Chicago Beauty Home Since 1995</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;0,8..60,700;1,8..60,300;1,8..60,400&family=Nunito+Sans:wght@400;600;700&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        'warm-cream': '#FDF8F3',
+        'warm-sand': '#F0E6D8',
+        'warm-peach': '#FFF1E6',
+        'warm-brown': '#2C1810',
+        'warm-brown2': '#5E4B3B',
+        'warm-muted': '#9B8A7A',
+        'terra': '#B85C38',
+        'terra-light': '#D4763A',
+        'terra-dark': '#A04E2E',
+        'trust-green': '#5B7C5A',
+        'warm-surface': '#FFFFFF',
+        'warm-border': '#E0D5C7',
+        'warm-border2': '#D4C4B0',
+      },
+      fontFamily: {
+        'source': ['"Source Serif 4"', 'serif'],
+        'nunito': ['"Nunito Sans"', 'sans-serif'],
+        'lora': ['Lora', 'serif'],
+      }
+    }
+  }
+}
+</script>
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg-primary: #FDF8F3;
+  --bg-secondary: #F0E6D8;
+  --bg-accent: #FFF1E6;
+  --fg-primary: #2C1810;
+  --fg-secondary: #5E4B3B;
+  --fg-muted: #9B8A7A;
+  --accent-primary: #B85C38;
+  --accent-secondary: #D4763A;
+  --accent-green: #5B7C5A;
+  --surface: #FFFFFF;
+  --border: #E0D5C7;
+  --border-warm: #D4C4B0;
+}
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  letter-spacing: 0.01em;
+  color: var(--fg-primary);
+  background: var(--bg-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border);
+  padding: 0 32px;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-brand {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  gap: 0;
+}
+.nav-brand-name {
+  font-family: 'Source Serif 4', serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: var(--fg-primary);
+  line-height: 1.1;
+}
+.nav-brand-tag {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 11px;
+  color: var(--fg-muted);
+  line-height: 1;
+}
+.nav-links { display: flex; gap: 28px; align-items: center; }
+.nav-links a {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--fg-secondary);
+  text-decoration: none;
+  transition: color 250ms ease-in-out;
+}
+.nav-links a:hover { color: var(--accent-primary); }
+.nav-cta {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: #FFFFFF;
+  background: var(--accent-primary);
+  padding: 9px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 350ms ease-in-out;
+}
+.nav-cta:hover {
+  background: #A04E2E;
+  box-shadow: 0 4px 12px rgba(184, 92, 56, 0.25);
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  background: none; border: none; cursor: pointer;
+  width: 36px; height: 36px; position: relative;
+}
+.hamburger span {
+  display: block; width: 22px; height: 2px;
+  background: var(--fg-primary);
+  position: absolute; left: 7px;
+  border-radius: 2px;
+  transition: all 350ms ease-in-out;
+}
+.hamburger span:nth-child(1) { top: 10px; }
+.hamburger span:nth-child(2) { top: 17px; }
+.hamburger span:nth-child(3) { top: 24px; }
+.hamburger.open span:nth-child(1) { top: 17px; transform: rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { top: 17px; transform: rotate(-45deg); }
+
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 68px; left: 0; right: 0; bottom: 0;
+  background: var(--bg-primary);
+  z-index: 199;
+  padding: 24px 32px;
+  flex-direction: column; gap: 4px;
+}
+.mobile-nav.open { display: flex; }
+.mobile-nav a {
+  font-family: 'Source Serif 4', serif;
+  font-weight: 400;
+  font-size: 26px;
+  color: var(--fg-primary);
+  text-decoration: none;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+  transition: color 250ms;
+}
+.mobile-nav a:hover { color: var(--accent-primary); }
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: block; }
+  nav { padding: 0 20px; }
+}
+
+/* ── HERO ── */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: calc(100vh - 68px);
+  overflow: hidden;
+}
+
+.hero-image {
+  position: relative;
+  overflow: hidden;
+}
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  border-radius: 0 0 8px 0;
+}
+/* Neighborhood pill floating on image */
+.hero-location-pill {
+  position: absolute;
+  bottom: 28px;
+  left: 28px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 10px 18px;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 2px 8px rgba(44, 24, 16, 0.08);
+  opacity: 0;
+  transform: translateY(10px);
+  animation: gentleFadeUp 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 800ms forwards;
+}
+.hero-location-pill .pin {
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.hero-location-pill .pin svg {
+  width: 16px;
+  height: 16px;
+  fill: var(--accent-primary);
+}
+.hero-location-pill span {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--fg-primary);
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 64px 48px 64px 56px;
+  max-width: 600px;
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: gentleFadeUp 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 200ms forwards;
+}
+.hero-tag .dot {
+  width: 8px;
+  height: 8px;
+  background: var(--accent-green);
+  border-radius: 50%;
+}
+.hero-tag span {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  color: var(--accent-green);
+  text-transform: uppercase;
+}
+
+.hero-headline {
+  font-family: 'Source Serif 4', serif;
+  font-weight: 400;
+  font-size: 52px;
+  line-height: 60px;
+  color: var(--fg-primary);
+  margin-bottom: 20px;
+  text-wrap: balance;
+  opacity: 0;
+  transform: translateY(14px);
+  animation: gentleFadeUp 600ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 350ms forwards;
+}
+
+.hero-sub {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 30px;
+  color: var(--fg-secondary);
+  max-width: 440px;
+  margin-bottom: 16px;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: gentleFadeUp 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 530ms forwards;
+}
+
+.hero-quote {
+  font-family: 'Lora', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: var(--fg-muted);
+  margin-bottom: 32px;
+  padding-left: 16px;
+  border-left: 2px solid var(--border-warm);
+  opacity: 0;
+  transform: translateY(10px);
+  animation: gentleFadeUp 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 650ms forwards;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: gentleFadeUp 500ms cubic-bezier(0.25, 0.46, 0.45, 0.94) 750ms forwards;
+}
+
+@keyframes gentleFadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── BUTTONS ── */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--accent-primary);
+  color: #FFFFFF;
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 350ms ease-in-out;
+}
+.btn-primary:hover {
+  background: #A04E2E;
+  box-shadow: 0 4px 12px rgba(184, 92, 56, 0.25);
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--bg-primary);
+  color: var(--accent-primary);
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  padding: 14px 28px;
+  border: 1.5px solid var(--accent-primary);
+  border-radius: 8px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 350ms ease-in-out;
+}
+.btn-secondary:hover {
+  background: var(--accent-primary);
+  color: #FFFFFF;
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  color: var(--accent-primary);
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0;
+  transition: color 250ms ease-in-out;
+}
+.btn-ghost:hover {
+  color: var(--accent-secondary);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* ── TRUST STRIP ── */
+.trust-strip {
+  background: var(--bg-accent);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 18px 32px;
+}
+.trust-strip-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.trust-item .icon {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.trust-item .icon svg {
+  width: 18px;
+  height: 18px;
+}
+.trust-item span {
+  font-family: 'Nunito Sans', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--fg-secondary);
+  white-space: nowrap;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1024px) {
+  .hero-headline { font-size: 44px; line-height: 52px; }
+  .hero-content { padding: 48px 36px 48px 40px; }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+  .hero-image {
+    height: 50vh;
+    max-height: 420px;
+  }
+  .hero-image img {
+    border-radius: 0;
+  }
+  .hero-content {
+    padding: 36px 24px 48px;
+    max-width: 100%;
+  }
+  .hero-headline { font-size: 36px; line-height: 44px; }
+  .hero-sub { font-size: 16px; line-height: 28px; }
+  .hero-location-pill { bottom: 16px; left: 16px; }
+  .trust-strip { padding: 16px 20px; }
+  .trust-strip-inner { gap: 20px; justify-content: flex-start; }
+}
+
+@media (max-width: 480px) {
+  .hero-headline { font-size: 30px; line-height: 38px; }
+  .hero-content { padding: 28px 20px 40px; }
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .btn-primary, .btn-secondary { justify-content: center; }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .hero-tag, .hero-headline, .hero-sub, .hero-quote,
+  .hero-actions, .hero-location-pill {
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAVIGATION ═══ -->
+<nav>
+  <a href="index.html" class="nav-brand">
+    <span class="nav-brand-name">Star Beauty</span>
+    <span class="nav-brand-tag">Since 1995</span>
+  </a>
+  <div class="nav-links">
+    <a href="stores.html">Find a Store</a>
+    <a href="promo.html">On Sale</a>
+    <a href="products.html">Products</a>
+    <a href="about.html">Our Story</a>
+    <a href="join.html" class="nav-cta">Join the list</a>
+  </div>
+  <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="stores.html">Find a Store</a>
+  <a href="promo.html">On Sale</a>
+  <a href="products.html">Products</a>
+  <a href="about.html">Our Story</a>
+  <a href="join.html">Join the list</a>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <!-- Left: photo -->
+  <div class="hero-image">
+    <img src="https://images.unsplash.com/photo-1523263685509-7085fde67093?w=1000&q=80" alt="Woman with natural hair smiling warmly" loading="eager">
+    <div class="hero-location-pill">
+      <span class="pin">
+        <svg viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 1 1 0-5 2.5 2.5 0 0 1 0 5z"/></svg>
+      </span>
+      <span>7 stores across Chicago</span>
+    </div>
+  </div>
+
+  <!-- Right: content -->
+  <div class="hero-content">
+    <div class="hero-tag">
+      <span class="dot"></span>
+      <span>Open today until 8 PM</span>
+    </div>
+
+    <h1 class="hero-headline">We&#8217;ve been here since before your first braid. We&#8217;ll be here for your next one.</h1>
+
+    <p class="hero-sub">Seven family-owned stores on the South and West sides. Twenty-nine years of stocking what Chicago actually uses &#8212; from $2.99 braids to premium human hair bundles.</p>
+
+    <p class="hero-quote">&#8220;The woman behind the counter remembers your name. That&#8217;s twenty-nine years of showing up.&#8221;</p>
+
+    <div class="hero-actions">
+      <a href="stores.html" class="btn-primary">Find your store</a>
+      <a href="promo.html" class="btn-secondary">See what&#8217;s on sale</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TRUST STRIP ═══ -->
+<div class="trust-strip">
+  <div class="trust-strip-inner">
+    <div class="trust-item">
+      <span class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#5B7C5A" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      </span>
+      <span>Family-owned since 1995</span>
+    </div>
+    <div class="trust-item">
+      <span class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#5B7C5A" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      </span>
+      <span>7 Chicago locations</span>
+    </div>
+    <div class="trust-item">
+      <span class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#5B7C5A" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      </span>
+      <span>Open 7 days a week</span>
+    </div>
+    <div class="trust-item">
+      <span class="icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#5B7C5A" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      </span>
+      <span>South &amp; West sides</span>
+    </div>
+  </div>
+</div>
+
+<!-- Remaining sections will be built after hero approval -->
+
+<script>
+function toggleNav() {
+  document.getElementById('hamburger').classList.toggle('open');
+  document.getElementById('mobileNav').classList.toggle('open');
+}
+</script>
+</body>
+</html>

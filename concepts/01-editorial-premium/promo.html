@@ -1,0 +1,1925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Mom Sale — May/June 2026 — Star Beauty Supply</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,700;1,9..144,300;1,9..144,400&family=Instrument+Serif&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg-primary: #FFFDF8;
+  --bg-secondary: #F3EDE4;
+  --fg-primary: #1A1612;
+  --fg-secondary: #5C5347;
+  --fg-muted: #9C9183;
+  --accent-primary: #C8A97E;
+  --accent-secondary: #8B6914;
+  --surface: #FFFFFF;
+  --border: #E4DDD3;
+  --border-strong: #C8BFB1;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  letter-spacing: 0.01em;
+  color: var(--fg-primary);
+  background: var(--bg-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── TYPE SCALE ── */
+.display { font-family: 'Fraunces', serif; font-weight: 300; font-size: 72px; line-height: 76px; letter-spacing: -0.02em; font-variation-settings: 'opsz' 72; }
+.h1 { font-family: 'Fraunces', serif; font-weight: 300; font-size: 56px; line-height: 60px; letter-spacing: -0.02em; font-variation-settings: 'opsz' 72; }
+.h2 { font-family: 'Fraunces', serif; font-weight: 400; font-size: 40px; line-height: 44px; letter-spacing: -0.02em; }
+.h3 { font-family: 'Fraunces', serif; font-weight: 400; font-size: 28px; line-height: 34px; }
+.overline { font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 11px; line-height: 16px; letter-spacing: 0.05em; text-transform: uppercase; }
+
+/* ── BUTTONS ── */
+.btn-primary {
+  display: inline-block;
+  background: var(--accent-primary);
+  color: var(--fg-primary);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 400ms ease-out;
+  text-decoration: none;
+}
+.btn-primary:hover { background: var(--accent-secondary); color: var(--bg-primary); }
+
+.btn-secondary {
+  display: inline-block;
+  background: transparent;
+  color: var(--fg-primary);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 14px 32px;
+  border: 1px solid var(--border-strong);
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 400ms ease-out;
+  text-decoration: none;
+}
+.btn-secondary:hover { border-color: var(--accent-primary); color: var(--accent-primary); }
+
+.btn-ghost {
+  display: inline-block;
+  background: transparent;
+  border: none;
+  color: var(--accent-primary);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  cursor: pointer;
+  transition: color 400ms ease-out;
+  padding: 0;
+}
+.btn-ghost:hover { color: var(--accent-secondary); }
+
+/* ── NAV ── */
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg-primary);
+  border-bottom: 1px solid var(--border);
+  padding: 0 48px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.nav-wordmark {
+  font-family: 'Instrument Serif', serif;
+  font-size: 16px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--fg-primary);
+  text-decoration: none;
+}
+.nav-links { display: flex; gap: 32px; align-items: center; }
+.nav-links a {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--fg-secondary);
+  text-decoration: none;
+  transition: color 400ms ease-out;
+}
+.nav-links a:hover { color: var(--accent-primary); }
+
+.nav-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  flex-direction: column;
+  gap: 5px;
+}
+.nav-hamburger span {
+  display: block;
+  width: 22px;
+  height: 1.5px;
+  background: var(--fg-primary);
+  transition: all 400ms ease-out;
+}
+.nav-hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(4.5px, 4.5px); }
+.nav-hamburger.active span:nth-child(2) { opacity: 0; }
+.nav-hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(4.5px, -4.5px); }
+
+.mobile-menu {
+  display: none;
+  position: fixed;
+  top: 64px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: var(--bg-primary);
+  z-index: 99;
+  padding: 48px 24px;
+  flex-direction: column;
+  gap: 32px;
+}
+.mobile-menu.active { display: flex; }
+.mobile-menu a {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  color: var(--fg-primary);
+  text-decoration: none;
+  transition: color 400ms ease-out;
+}
+.mobile-menu a:hover { color: var(--accent-primary); }
+
+/* ── MAGAZINE COVER HERO ── */
+.cover-hero {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+.cover-hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+}
+.cover-hero-gradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, rgba(26,22,18,0.85) 0%, rgba(26,22,18,0.6) 40%, transparent 70%);
+}
+.cover-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 96px 48px;
+  max-width: 640px;
+}
+.cover-hero-overline {
+  font-family: 'Instrument Serif', serif;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent-primary);
+  margin-bottom: 20px;
+}
+.cover-hero-headline {
+  font-family: 'Fraunces', serif;
+  font-weight: 300;
+  font-size: 88px;
+  line-height: 88px;
+  letter-spacing: -0.03em;
+  font-variation-settings: 'opsz' 72;
+  color: var(--bg-primary);
+  margin-bottom: 24px;
+}
+.cover-hero-sub {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 18px;
+  line-height: 28px;
+  color: rgba(255,253,248,0.75);
+  max-width: 400px;
+  margin-bottom: 8px;
+}
+.cover-hero-issue {
+  font-family: 'Instrument Serif', serif;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  color: rgba(255,253,248,0.4);
+  margin-top: 40px;
+}
+
+/* ── SECTION ── */
+.sale-section {
+  padding: 96px 48px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.sale-section-alt {
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+.section-overline {
+  font-family: 'Instrument Serif', serif;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  margin-bottom: 48px;
+}
+
+/* ── PRODUCT CARDS (EDITORIAL FLYER) ── */
+.product-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: 0;
+  cursor: pointer;
+  transition: border-color 400ms ease-out;
+}
+.product-card:hover { border-color: var(--accent-primary); }
+
+.product-card-img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+.product-card-info {
+  padding: 24px 28px;
+  background: var(--surface);
+}
+.product-card-brand {
+  font-family: 'Instrument Serif', serif;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent-primary);
+  margin-bottom: 6px;
+}
+.product-card-name {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--fg-primary);
+  margin-bottom: 4px;
+}
+.product-card-desc {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  color: var(--fg-secondary);
+  margin-bottom: 8px;
+}
+.product-card-price {
+  font-family: 'Fraunces', serif;
+  font-weight: 400;
+  font-size: 22px;
+  color: var(--fg-primary);
+}
+
+/* ── DETAIL OVERLAY ── */
+.product-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255,253,248,0.97);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 32px;
+  transform: translateY(100%);
+  transition: transform 400ms ease-out;
+  z-index: 5;
+  overflow-y: auto;
+}
+.product-card.active .product-overlay,
+.product-card:hover .product-overlay {
+  transform: translateY(0);
+}
+.overlay-brand {
+  font-family: 'Instrument Serif', serif;
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--accent-primary);
+  margin-bottom: 8px;
+}
+.overlay-name {
+  font-family: 'Fraunces', serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 30px;
+  color: var(--fg-primary);
+  margin-bottom: 6px;
+}
+.overlay-price {
+  font-family: 'Fraunces', serif;
+  font-weight: 400;
+  font-size: 20px;
+  color: var(--accent-secondary);
+  margin-bottom: 16px;
+}
+.overlay-desc {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  line-height: 24px;
+  color: var(--fg-secondary);
+  margin-bottom: 16px;
+}
+.overlay-sizes {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  line-height: 20px;
+  color: var(--fg-muted);
+  margin-bottom: 20px;
+}
+.overlay-sizes strong {
+  color: var(--fg-secondary);
+  font-weight: 500;
+}
+
+/* ── RESERVE INLINE ── */
+.reserve-trigger {
+  display: inline-block;
+  background: var(--accent-primary);
+  color: var(--fg-primary);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: all 400ms ease-out;
+}
+.reserve-trigger:hover { background: var(--accent-secondary); color: var(--bg-primary); }
+
+.reserve-stores {
+  display: none;
+  margin-top: 16px;
+}
+.reserve-stores.visible { display: block; }
+.reserve-stores-label {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  color: var(--fg-secondary);
+  margin-bottom: 10px;
+}
+.store-btn {
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 10px 14px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  line-height: 18px;
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 0;
+  color: var(--fg-primary);
+  cursor: pointer;
+  transition: all 400ms ease-out;
+  margin-bottom: 6px;
+}
+.store-btn:hover { border-color: var(--accent-primary); color: var(--accent-primary); }
+
+.reserve-confirm {
+  display: none;
+  padding: 14px 16px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--accent-primary);
+  margin-top: 10px;
+}
+.reserve-confirm.visible { display: block; }
+.reserve-confirm p {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--fg-primary);
+}
+.reserve-confirm strong {
+  color: var(--accent-secondary);
+  font-weight: 700;
+}
+
+/* ── EDITORIAL GRIDS ── */
+.grid-hero-pair {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 0;
+}
+.grid-hero-pair .product-card:first-child {
+  border-right: none;
+}
+.grid-hero-pair .stack {
+  display: flex;
+  flex-direction: column;
+}
+.grid-hero-pair .stack .product-card:first-child {
+  border-bottom: none;
+}
+
+.grid-two {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 0;
+}
+.grid-two .product-card:first-child {
+  border-right: none;
+}
+
+.grid-editorial-three {
+  display: grid;
+  grid-template-columns: 1fr 1fr 0.8fr;
+  gap: 0;
+}
+.grid-editorial-three .product-card:nth-child(1) { border-right: none; }
+.grid-editorial-three .product-card:nth-child(2) { border-right: none; }
+
+.grid-stagger-three {
+  display: grid;
+  grid-template-columns: 0.9fr 1fr 1.1fr;
+  gap: 0;
+}
+.grid-stagger-three .product-card:nth-child(1) { border-right: none; }
+.grid-stagger-three .product-card:nth-child(2) { border-right: none; }
+
+/* ── BOTTOM CTA ── */
+.bottom-cta {
+  padding: 96px 48px;
+  background: var(--fg-primary);
+  color: var(--bg-primary);
+}
+.bottom-cta-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.bottom-cta-headline {
+  font-family: 'Fraunces', serif;
+  font-weight: 300;
+  font-size: 40px;
+  line-height: 48px;
+  color: var(--bg-primary);
+  margin-bottom: 40px;
+}
+.bottom-cta-stores {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px 48px;
+  margin-bottom: 40px;
+}
+.bottom-store-name {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--bg-primary);
+  margin-bottom: 4px;
+}
+.bottom-store-address {
+  font-size: 14px;
+  line-height: 20px;
+  color: rgba(255,253,248,0.5);
+}
+.bottom-cta-link {
+  color: var(--accent-primary);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  transition: color 400ms ease-out;
+}
+.bottom-cta-link:hover { color: var(--accent-secondary); }
+
+/* ── FOOTER ── */
+footer {
+  background: var(--fg-primary);
+  color: var(--bg-primary);
+  padding: 80px 48px 40px;
+  border-top: 1px solid rgba(255,253,248,0.1);
+}
+.footer-signup {
+  max-width: 640px;
+  margin-bottom: 64px;
+  padding-bottom: 64px;
+  border-bottom: 1px solid rgba(255,253,248,0.1);
+}
+.footer-signup-headline {
+  font-family: 'Fraunces', serif;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 34px;
+  color: var(--bg-primary);
+  margin-bottom: 24px;
+}
+.footer-form {
+  display: flex;
+  gap: 12px;
+  align-items: stretch;
+  flex-wrap: wrap;
+}
+.footer-form input {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  padding: 14px 16px;
+  background: rgba(255,253,248,0.08);
+  border: 1px solid rgba(255,253,248,0.2);
+  border-radius: 2px;
+  color: var(--bg-primary);
+  outline: none;
+  transition: border-color 400ms ease-out;
+  flex: 1;
+  min-width: 180px;
+}
+.footer-form input::placeholder { color: rgba(255,253,248,0.4); }
+.footer-form input:focus { border-color: var(--accent-primary); }
+.footer-form .btn-primary { flex-shrink: 0; white-space: nowrap; }
+.footer-trust {
+  font-size: 12px;
+  color: rgba(255,253,248,0.4);
+  margin-top: 12px;
+  line-height: 18px;
+}
+.footer-locations {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px 48px;
+  margin-bottom: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255,253,248,0.1);
+}
+.footer-location-name {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  color: var(--bg-primary);
+  margin-bottom: 4px;
+}
+.footer-location-address {
+  font-size: 13px;
+  line-height: 19px;
+  color: rgba(255,253,248,0.5);
+}
+.footer-location-phone {
+  font-size: 13px;
+  color: rgba(255,253,248,0.4);
+  margin-top: 4px;
+}
+.footer-location-phone a {
+  color: rgba(255,253,248,0.4);
+  text-decoration: none;
+  transition: color 400ms ease-out;
+}
+.footer-location-phone a:hover { color: var(--accent-primary); }
+.footer-hours {
+  font-size: 13px;
+  color: rgba(255,253,248,0.5);
+  margin-bottom: 32px;
+}
+.footer-hours strong {
+  color: rgba(255,253,248,0.7);
+  font-weight: 500;
+}
+.footer-social {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 48px;
+}
+.footer-social a {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  color: rgba(255,253,248,0.5);
+  text-decoration: none;
+  transition: color 400ms ease-out;
+}
+.footer-social a:hover { color: var(--accent-primary); }
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid rgba(255,253,248,0.1);
+  padding-top: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+.footer-copy {
+  font-size: 12px;
+  color: rgba(255,253,248,0.35);
+}
+.footer-credit {
+  font-size: 12px;
+  color: rgba(255,253,248,0.35);
+}
+.footer-credit a {
+  color: rgba(255,253,248,0.5);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* ── MODAL ── */
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(26, 22, 18, 0.6);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 400ms ease-out, visibility 400ms ease-out;
+}
+.modal-backdrop.active { opacity: 1; visibility: visible; }
+.modal {
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: 0;
+  max-width: 480px;
+  width: calc(100% - 48px);
+  padding: 48px 40px 36px;
+  position: relative;
+  transform: translateY(16px);
+  transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.modal-backdrop.active .modal { transform: translateY(0); }
+.modal-close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: none;
+  border: none;
+  color: var(--fg-muted);
+  cursor: pointer;
+  font-size: 20px;
+  line-height: 1;
+  padding: 4px;
+  transition: color 400ms ease-out;
+}
+.modal-close:hover { color: var(--fg-primary); }
+.modal-headline {
+  font-family: 'Fraunces', serif;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 34px;
+  color: var(--fg-primary);
+  margin-bottom: 12px;
+}
+.modal-sub {
+  font-size: 16px;
+  line-height: 24px;
+  color: var(--fg-secondary);
+  margin-bottom: 28px;
+}
+.modal-field { margin-bottom: 16px; }
+.modal-field input[type="email"],
+.modal-field input[type="tel"] {
+  width: 100%;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  background: var(--bg-primary);
+  color: var(--fg-primary);
+  outline: none;
+  transition: border-color 400ms ease-out;
+}
+.modal-field input:focus { border-color: var(--accent-primary); }
+.modal-field input::placeholder { color: var(--fg-muted); }
+.modal-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+.modal-checkbox input[type="checkbox"] {
+  margin-top: 3px;
+  accent-color: var(--accent-primary);
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+.modal-checkbox label {
+  font-size: 13px;
+  line-height: 18px;
+  color: var(--fg-secondary);
+  cursor: pointer;
+}
+.modal-submit { width: 100%; text-align: center; }
+.modal-dismiss {
+  display: block;
+  text-align: center;
+  margin-top: 16px;
+  background: none;
+  border: none;
+  color: var(--fg-muted);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: color 400ms ease-out;
+}
+.modal-dismiss:hover { color: var(--fg-secondary); }
+.modal-error {
+  font-size: 12px;
+  color: #B44;
+  margin-top: 6px;
+  display: none;
+}
+.modal-error.visible { display: block; }
+.modal-success { display: none; text-align: center; }
+.modal-success.active { display: block; }
+.modal-form-content.hidden { display: none; }
+.modal-success-code {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  letter-spacing: 0.06em;
+  color: var(--accent-secondary);
+  margin: 24px 0 12px;
+  user-select: all;
+}
+.modal-copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 2px;
+  padding: 8px 16px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  color: var(--fg-secondary);
+  cursor: pointer;
+  transition: all 400ms ease-out;
+}
+.modal-copy-btn:hover { border-color: var(--accent-primary); color: var(--accent-primary); }
+.modal-success-note {
+  font-size: 14px;
+  color: var(--fg-secondary);
+  margin-top: 20px;
+  line-height: 22px;
+}
+
+/* ── CHAT ── */
+.chat-fab {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--bg-primary);
+  border: 1px solid var(--accent-primary);
+  cursor: pointer;
+  z-index: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Instrument Serif', serif;
+  font-size: 22px;
+  color: var(--accent-primary);
+  transition: all 400ms ease-out;
+  animation: chat-pulse 4s ease-in-out infinite;
+}
+.chat-fab:hover { background: var(--accent-primary); color: var(--fg-primary); border-color: var(--accent-primary); }
+@keyframes chat-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+.chat-panel {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 380px;
+  height: 520px;
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: 0;
+  z-index: 950;
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 600ms cubic-bezier(0.22, 1, 0.36, 1);
+  visibility: hidden;
+}
+.chat-panel.open {
+  transform: translateX(0);
+  visibility: visible;
+}
+.chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--border);
+}
+.chat-header-title {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  color: var(--fg-primary);
+}
+.chat-close {
+  background: none;
+  border: none;
+  font-size: 18px;
+  color: var(--fg-muted);
+  cursor: pointer;
+  padding: 4px;
+  transition: color 400ms ease-out;
+}
+.chat-close:hover { color: var(--fg-primary); }
+.chat-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.chat-msg {
+  max-width: 85%;
+  font-size: 14px;
+  line-height: 21px;
+}
+.chat-msg.bot {
+  align-self: flex-start;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  padding: 12px 16px;
+  border-radius: 0 2px 2px 2px;
+  color: var(--fg-primary);
+}
+.chat-msg.user {
+  align-self: flex-end;
+  background: var(--fg-primary);
+  color: var(--bg-primary);
+  padding: 12px 16px;
+  border-radius: 2px 0 2px 2px;
+}
+.chat-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-self: flex-start;
+}
+.chat-chip {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  padding: 8px 14px;
+  border: 1px solid var(--border-strong);
+  border-radius: 2px;
+  background: var(--surface);
+  color: var(--fg-secondary);
+  cursor: pointer;
+  transition: all 400ms ease-out;
+}
+.chat-chip:hover { border-color: var(--accent-primary); color: var(--accent-primary); }
+.chat-typing {
+  align-self: flex-start;
+  display: flex;
+  gap: 4px;
+  padding: 12px 16px;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 0 2px 2px 2px;
+}
+.chat-typing span {
+  width: 6px;
+  height: 6px;
+  background: var(--fg-muted);
+  border-radius: 50%;
+  animation: typingDot 1.2s ease-in-out infinite;
+}
+.chat-typing span:nth-child(2) { animation-delay: 0.2s; }
+.chat-typing span:nth-child(3) { animation-delay: 0.4s; }
+@keyframes typingDot {
+  0%, 60%, 100% { opacity: 0.3; transform: translateY(0); }
+  30% { opacity: 1; transform: translateY(-3px); }
+}
+.chat-reserve-btn {
+  align-self: flex-start;
+  margin-top: -8px;
+}
+.chat-input-area {
+  display: flex;
+  border-top: 1px solid var(--border);
+  padding: 12px 16px;
+  gap: 8px;
+  align-items: center;
+}
+.chat-input {
+  flex: 1;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--fg-primary);
+}
+.chat-input::placeholder { color: var(--fg-muted); }
+.chat-send {
+  background: none;
+  border: none;
+  color: var(--accent-primary);
+  cursor: pointer;
+  font-size: 16px;
+  padding: 4px;
+  transition: color 400ms ease-out;
+}
+.chat-send:hover { color: var(--accent-secondary); }
+.chat-send:disabled { color: var(--fg-muted); cursor: not-allowed; }
+.chat-footer-bar {
+  text-align: center;
+  padding: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  border-top: 1px solid var(--border);
+}
+
+/* ── SCROLL ANIMATION ── */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 600ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 900px) {
+  nav { padding: 0 24px; }
+  .nav-links { display: none; }
+  .nav-hamburger { display: flex; }
+  .cover-hero { min-height: 80vh; }
+  .cover-hero-content { padding: 64px 24px; }
+  .cover-hero-headline { font-size: 56px; line-height: 58px; }
+  .sale-section { padding: 64px 24px; }
+  .grid-hero-pair { grid-template-columns: 1fr; }
+  .grid-hero-pair .product-card:first-child { border-right: 1px solid var(--border); border-bottom: none; }
+  .grid-two { grid-template-columns: 1fr; }
+  .grid-two .product-card:first-child { border-right: 1px solid var(--border); border-bottom: none; }
+  .grid-editorial-three { grid-template-columns: 1fr; }
+  .grid-editorial-three .product-card { border-right: 1px solid var(--border); }
+  .grid-editorial-three .product-card:not(:last-child) { border-bottom: none; }
+  .grid-stagger-three { grid-template-columns: 1fr; }
+  .grid-stagger-three .product-card { border-right: 1px solid var(--border); }
+  .grid-stagger-three .product-card:not(:last-child) { border-bottom: none; }
+  .bottom-cta { padding: 64px 24px; }
+  .bottom-cta-stores { grid-template-columns: 1fr 1fr; }
+  .bottom-cta-headline { font-size: 32px; line-height: 40px; }
+  footer { padding: 56px 24px 32px; }
+  .footer-form { flex-direction: column; }
+  .footer-locations { grid-template-columns: 1fr 1fr; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
+  .chat-panel { width: 100%; height: 100%; border: none; }
+  .modal {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: 100%;
+    width: 100%;
+    border-radius: 0;
+    transform: translateY(100%);
+    padding: 40px 24px 32px;
+  }
+  .modal-backdrop.active .modal { transform: translateY(0); }
+  /* Mobile: disable hover overlays, use tap only */
+  .product-card:hover .product-overlay { transform: translateY(100%); }
+  .product-card.active .product-overlay { transform: translateY(0); }
+}
+@media (max-width: 600px) {
+  .footer-locations { grid-template-columns: 1fr; }
+  .bottom-cta-stores { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .cover-hero-headline { font-size: 42px; line-height: 44px; }
+  .bottom-cta-headline { font-size: 28px; line-height: 36px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ════ NAV ════ -->
+<nav>
+  <a href="index.html" class="nav-wordmark">Star Beauty</a>
+  <div class="nav-links">
+    <a href="promo.html">Sale</a>
+    <a href="products.html">Products</a>
+    <a href="stores.html">Stores</a>
+    <a href="about.html">About</a>
+    <a href="join.html">Join</a>
+  </div>
+  <button class="nav-hamburger" id="navHamburger" onclick="toggleMobileMenu()" aria-label="Toggle menu">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
+</nav>
+
+<!-- ════ MOBILE MENU ════ -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="promo.html" onclick="closeMobileMenu()">Sale</a>
+  <a href="products.html" onclick="closeMobileMenu()">Products</a>
+  <a href="stores.html" onclick="closeMobileMenu()">Stores</a>
+  <a href="about.html">About</a>
+  <a href="join.html">Join</a>
+</div>
+
+<!-- ════ MAGAZINE COVER HERO ════ -->
+<section class="cover-hero">
+  <img class="cover-hero-img" src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=1200" alt="Editorial beauty portrait, dramatic lighting" loading="eager">
+  <div class="cover-hero-gradient"></div>
+  <div class="cover-hero-content">
+    <div class="cover-hero-overline">May &mdash; June 2026</div>
+    <h1 class="cover-hero-headline">The Mom<br>Sale</h1>
+    <p class="cover-hero-sub">Real hair. Real prices. Your favorite brands &mdash; all seven stores, while it lasts.</p>
+    <div class="cover-hero-issue">Star Beauty Supply &middot; Volume XII, Issue 3</div>
+  </div>
+</section>
+
+<!-- ════ 01 — HAIR BUNDLES ════ -->
+<section class="sale-section fade-in" id="bundles">
+  <div class="section-overline">01 &mdash; Hair Bundles</div>
+  <div class="grid-hero-pair">
+    <div class="product-card" data-product="pink-lemon" onclick="handleCardTap(this)">
+      <img class="product-card-img" src="https://images.unsplash.com/photo-1522337360788-8b13dee7a37e?w=800" alt="Premium unprocessed human hair bundles" style="height:460px;" loading="lazy">
+      <div class="product-card-info">
+        <div class="product-card-brand">15A Grade</div>
+        <div class="product-card-name">Pink Lemon 15A</div>
+        <div class="product-card-desc">3pc unprocessed human hair</div>
+        <div class="product-card-price">from $74.99</div>
+      </div>
+      <div class="product-overlay">
+        <div class="overlay-brand">15A Grade &middot; Unprocessed</div>
+        <div class="overlay-name">Pink Lemon 15A</div>
+        <div class="overlay-price">from $74.99</div>
+        <div class="overlay-desc">100% unprocessed human hair. The 15A grade means minimal processing for maximum longevity. Can be colored and styled freely.</div>
+        <div class="overlay-sizes"><strong>Lengths:</strong> 10&Prime;, 12&Prime;, 14&Prime;, 16&Prime;, 18&Prime;, 20&Prime;, 22&Prime;, 24&Prime; &middot; Natural color</div>
+        <button class="reserve-trigger" onclick="event.stopPropagation(); showReserve(this)">Reserve at Star Beauty</button>
+        <div class="reserve-stores">
+          <div class="reserve-stores-label">Choose your store:</div>
+          <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 1 &mdash; Ashland Ave')">Star Beauty 1 &mdash; 1250 S Ashland Ave</button>
+          <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 2 &mdash; 87th St')">Star Beauty 2 &mdash; 3258 W 87th St</button>
+          <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 3 &mdash; 95th St')">Star Beauty 3 &mdash; 1637 E 95th St</button>
+          <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 4 &mdash; Chicago Ave')">Star Beauty 4 &mdash; 5400 W Chicago Ave</button>
+          <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 5 &mdash; Kedzie Ave')">Star Beauty 5 &mdash; 800 N Kedzie Ave</button>
+          <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 8 &mdash; North Ave')">Star Beauty 8 &mdash; 4937 W North Ave</button>
+          <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 9 &mdash; Stony Island')">Star Beauty 9 &mdash; 7546 S Stony Island Ave</button>
+          <div class="reserve-confirm"><p>Reserved at <strong></strong>. We&rsquo;ll have it ready &mdash; usually within the hour.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="stack">
+      <div class="product-card" data-product="gold-luster" onclick="handleCardTap(this)">
+        <img class="product-card-img" src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=800" alt="Body wave and deep wave hair bundles" style="height:220px;" loading="lazy">
+        <div class="product-card-info">
+          <div class="product-card-brand">Wedding Season Pick</div>
+          <div class="product-card-name">Gold Luster</div>
+          <div class="product-card-desc">3pc human hair</div>
+          <div class="product-card-price">from $69.99</div>
+        </div>
+        <div class="product-overlay">
+          <div class="overlay-brand">Wedding Season Pick</div>
+          <div class="overlay-name">Gold Luster</div>
+          <div class="overlay-price">from $69.99</div>
+          <div class="overlay-desc">Body wave, deep wave, and straight textures. Photographs beautifully for special occasions. Our most popular bundle for weddings and events.</div>
+          <div class="overlay-sizes"><strong>Lengths:</strong> 10&Prime;&ndash;24&Prime; &middot; Body wave, deep wave, straight</div>
+          <button class="reserve-trigger" onclick="event.stopPropagation(); showReserve(this)">Reserve at Star Beauty</button>
+          <div class="reserve-stores">
+            <div class="reserve-stores-label">Choose your store:</div>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 1 &mdash; Ashland Ave')">Star Beauty 1 &mdash; 1250 S Ashland Ave</button>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 2 &mdash; 87th St')">Star Beauty 2 &mdash; 3258 W 87th St</button>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 3 &mdash; 95th St')">Star Beauty 3 &mdash; 1637 E 95th St</button>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 4 &mdash; Chicago Ave')">Star Beauty 4 &mdash; 5400 W Chicago Ave</button>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 5 &mdash; Kedzie Ave')">Star Beauty 5 &mdash; 800 N Kedzie Ave</button>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 8 &mdash; North Ave')">Star Beauty 8 &mdash; 4937 W North Ave</button>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 9 &mdash; Stony Island')">Star Beauty 9 &mdash; 7546 S Stony Island Ave</button>
+            <div class="reserve-confirm"><p>Reserved at <strong></strong>. We&rsquo;ll have it ready &mdash; usually within the hour.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card" data-product="dream-weaver" onclick="handleCardTap(this)">
+        <img class="product-card-img" src="https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=800" alt="Hair care products and bundles" style="height:220px;" loading="lazy">
+        <div class="product-card-info">
+          <div class="product-card-brand">Value Pick</div>
+          <div class="product-card-name">Dream Weaver</div>
+          <div class="product-card-desc">3pc human hair</div>
+          <div class="product-card-price">from $64.99</div>
+        </div>
+        <div class="product-overlay">
+          <div class="overlay-brand">Value Pick</div>
+          <div class="overlay-name">Dream Weaver</div>
+          <div class="overlay-price">from $64.99</div>
+          <div class="overlay-desc">Our value bundle without the value look. Soft, natural movement. Available in body wave and straight.</div>
+          <div class="overlay-sizes"><strong>Lengths:</strong> 10&Prime;&ndash;22&Prime; &middot; Body wave, straight</div>
+          <button class="reserve-trigger" onclick="event.stopPropagation(); showReserve(this)">Reserve at Star Beauty</button>
+          <div class="reserve-stores">
+            <div class="reserve-stores-label">Choose your store:</div>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 1 &mdash; Ashland Ave')">Star Beauty 1 &mdash; 1250 S Ashland Ave</button>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 2 &mdash; 87th St')">Star Beauty 2 &mdash; 3258 W 87th St</button>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 3 &mdash; 95th St')">Star Beauty 3 &mdash; 1637 E 95th St</button>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 4 &mdash; Chicago Ave')">Star Beauty 4 &mdash; 5400 W Chicago Ave</button>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 5 &mdash; Kedzie Ave')">Star Beauty 5 &mdash; 800 N Kedzie Ave</button>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 8 &mdash; North Ave')">Star Beauty 8 &mdash; 4937 W North Ave</button>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 9 &mdash; Stony Island')">Star Beauty 9 &mdash; 7546 S Stony Island Ave</button>
+            <div class="reserve-confirm"><p>Reserved at <strong></strong>. We&rsquo;ll have it ready &mdash; usually within the hour.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ 02 — BRAIDING HAIR ════ -->
+<section class="sale-section-alt">
+  <div class="sale-section fade-in" id="braiding">
+    <div class="section-overline">02 &mdash; Braiding Hair</div>
+    <div class="grid-two">
+      <div class="product-card" onclick="handleCardTap(this)">
+        <img class="product-card-img" src="https://images.unsplash.com/photo-1562322140-8baeececf3df?w=800" alt="Pre-stretched braiding hair" style="height:340px;" loading="lazy">
+        <div class="product-card-info">
+          <div class="product-card-brand">Industry Standard</div>
+          <div class="product-card-name">Outre X-Pression 3X Pre-Stretched Braid</div>
+          <div class="product-card-desc">Pre-stretched, pre-layered, ready to braid</div>
+          <div class="product-card-price">from $2.99/ea</div>
+        </div>
+        <div class="product-overlay">
+          <div class="overlay-brand">Industry Standard</div>
+          <div class="overlay-name">Outre X-Pression 3X Pre-Stretched Braid</div>
+          <div class="overlay-price">from $2.99/ea</div>
+          <div class="overlay-desc">Pre-stretched, pre-layered, and ready to braid. 52&Prime; length. The industry standard &mdash; now at our lowest price ever.</div>
+          <div class="overlay-sizes"><strong>Colors:</strong> 40+ shades available &middot; 52&Prime; length</div>
+          <button class="reserve-trigger" onclick="event.stopPropagation(); showReserve(this)">Reserve at Star Beauty</button>
+          <div class="reserve-stores">
+            <div class="reserve-stores-label">Choose your store:</div>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 1 &mdash; Ashland Ave')">Star Beauty 1 &mdash; 1250 S Ashland Ave</button>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 2 &mdash; 87th St')">Star Beauty 2 &mdash; 3258 W 87th St</button>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 3 &mdash; 95th St')">Star Beauty 3 &mdash; 1637 E 95th St</button>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 4 &mdash; Chicago Ave')">Star Beauty 4 &mdash; 5400 W Chicago Ave</button>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 5 &mdash; Kedzie Ave')">Star Beauty 5 &mdash; 800 N Kedzie Ave</button>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 8 &mdash; North Ave')">Star Beauty 8 &mdash; 4937 W North Ave</button>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 9 &mdash; Stony Island')">Star Beauty 9 &mdash; 7546 S Stony Island Ave</button>
+            <div class="reserve-confirm"><p>Reserved at <strong></strong>. We&rsquo;ll have it ready &mdash; usually within the hour.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card" onclick="handleCardTap(this)">
+        <img class="product-card-img" src="https://images.unsplash.com/photo-1527799820374-dcf8d9d4a388?w=800" alt="Boho braid bulk hair" style="height:340px;" loading="lazy">
+        <div class="product-card-info">
+          <div class="product-card-brand">Trending</div>
+          <div class="product-card-name">Sensationnel Empire Deep Bulk for Boho Braids</div>
+          <div class="product-card-desc">Premium bulk hair, 14&Prime;</div>
+          <div class="product-card-price">$29.99</div>
+        </div>
+        <div class="product-overlay">
+          <div class="overlay-brand">Trending</div>
+          <div class="overlay-name">Sensationnel Empire Deep Bulk for Boho Braids</div>
+          <div class="overlay-price">$29.99</div>
+          <div class="overlay-desc">Premium bulk hair for the boho braid trend. Deep wave texture. 100% human hair feel. Perfect for goddess locs and boho knotless.</div>
+          <div class="overlay-sizes"><strong>Length:</strong> 14&Prime; &middot; Deep wave texture</div>
+          <button class="reserve-trigger" onclick="event.stopPropagation(); showReserve(this)">Reserve at Star Beauty</button>
+          <div class="reserve-stores">
+            <div class="reserve-stores-label">Choose your store:</div>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 1 &mdash; Ashland Ave')">Star Beauty 1 &mdash; 1250 S Ashland Ave</button>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 2 &mdash; 87th St')">Star Beauty 2 &mdash; 3258 W 87th St</button>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 3 &mdash; 95th St')">Star Beauty 3 &mdash; 1637 E 95th St</button>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 4 &mdash; Chicago Ave')">Star Beauty 4 &mdash; 5400 W Chicago Ave</button>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 5 &mdash; Kedzie Ave')">Star Beauty 5 &mdash; 800 N Kedzie Ave</button>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 8 &mdash; North Ave')">Star Beauty 8 &mdash; 4937 W North Ave</button>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 9 &mdash; Stony Island')">Star Beauty 9 &mdash; 7546 S Stony Island Ave</button>
+            <div class="reserve-confirm"><p>Reserved at <strong></strong>. We&rsquo;ll have it ready &mdash; usually within the hour.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ 03 — STYLING TOOLS ════ -->
+<section class="sale-section fade-in" id="tools">
+  <div class="section-overline">03 &mdash; Styling Tools</div>
+  <div class="grid-two" style="grid-template-columns: 1.4fr 1fr;">
+    <div class="product-card" onclick="handleCardTap(this)">
+      <img class="product-card-img" src="https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=800" alt="Professional stand dryer" style="height:380px;" loading="lazy">
+      <div class="product-card-info">
+        <div class="product-card-brand">Professional Grade</div>
+        <div class="product-card-name">Hot &amp; Hotter Turbo Pro 4000 Stand Dryer</div>
+        <div class="product-card-desc">1875W turbo, rolling base, 60-min timer</div>
+        <div class="product-card-price">$79.99</div>
+      </div>
+      <div class="product-overlay">
+        <div class="overlay-brand">Professional Grade</div>
+        <div class="overlay-name">Hot &amp; Hotter Turbo Pro 4000 Stand Dryer</div>
+        <div class="overlay-price">$79.99</div>
+        <div class="overlay-desc">Professional-grade stand dryer. 1875W turbo. Rolling base. Timer up to 60 minutes. Bonnet style for even, gentle drying.</div>
+        <div class="overlay-sizes"><strong>Features:</strong> Rolling base &middot; 60-min timer &middot; Bonnet style</div>
+        <button class="reserve-trigger" onclick="event.stopPropagation(); showReserve(this)">Reserve at Star Beauty</button>
+        <div class="reserve-stores">
+          <div class="reserve-stores-label">Choose your store:</div>
+          <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 1 &mdash; Ashland Ave')">Star Beauty 1 &mdash; 1250 S Ashland Ave</button>
+          <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 2 &mdash; 87th St')">Star Beauty 2 &mdash; 3258 W 87th St</button>
+          <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 3 &mdash; 95th St')">Star Beauty 3 &mdash; 1637 E 95th St</button>
+          <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 4 &mdash; Chicago Ave')">Star Beauty 4 &mdash; 5400 W Chicago Ave</button>
+          <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 5 &mdash; Kedzie Ave')">Star Beauty 5 &mdash; 800 N Kedzie Ave</button>
+          <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 8 &mdash; North Ave')">Star Beauty 8 &mdash; 4937 W North Ave</button>
+          <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 9 &mdash; Stony Island')">Star Beauty 9 &mdash; 7546 S Stony Island Ave</button>
+          <div class="reserve-confirm"><p>Reserved at <strong></strong>. We&rsquo;ll have it ready &mdash; usually within the hour.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="product-card" onclick="handleCardTap(this)">
+      <img class="product-card-img" src="https://images.unsplash.com/photo-1583361704493-d4d4f6ff8420?w=800" alt="BTL braiding gel and styling products" style="height:380px;" loading="lazy">
+      <div class="product-card-info">
+        <div class="product-card-brand">Stylist Favorite</div>
+        <div class="product-card-name">BTL Braiding Gel 16oz</div>
+        <div class="product-card-desc">Strong hold, no flaking</div>
+        <div class="product-card-price">$8.99</div>
+      </div>
+      <div class="product-overlay">
+        <div class="overlay-brand">Stylist Favorite</div>
+        <div class="overlay-name">BTL Braiding Gel 16oz</div>
+        <div class="overlay-price">$8.99</div>
+        <div class="overlay-desc">Strong hold without the flaking. Water-based formula. Washes out clean. The go-to for knotless braids, cornrows, and sleek styles.</div>
+        <div class="overlay-sizes"><strong>Size:</strong> 16oz &middot; Water-based formula</div>
+        <button class="reserve-trigger" onclick="event.stopPropagation(); showReserve(this)">Reserve at Star Beauty</button>
+        <div class="reserve-stores">
+          <div class="reserve-stores-label">Choose your store:</div>
+          <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 1 &mdash; Ashland Ave')">Star Beauty 1 &mdash; 1250 S Ashland Ave</button>
+          <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 2 &mdash; 87th St')">Star Beauty 2 &mdash; 3258 W 87th St</button>
+          <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 3 &mdash; 95th St')">Star Beauty 3 &mdash; 1637 E 95th St</button>
+          <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 4 &mdash; Chicago Ave')">Star Beauty 4 &mdash; 5400 W Chicago Ave</button>
+          <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 5 &mdash; Kedzie Ave')">Star Beauty 5 &mdash; 800 N Kedzie Ave</button>
+          <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 8 &mdash; North Ave')">Star Beauty 8 &mdash; 4937 W North Ave</button>
+          <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 9 &mdash; Stony Island')">Star Beauty 9 &mdash; 7546 S Stony Island Ave</button>
+          <div class="reserve-confirm"><p>Reserved at <strong></strong>. We&rsquo;ll have it ready &mdash; usually within the hour.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ 04 — HAIR COLOR ════ -->
+<section class="sale-section-alt">
+  <div class="sale-section fade-in" id="color">
+    <div class="section-overline">04 &mdash; Hair Color</div>
+    <div class="grid-editorial-three">
+      <div class="product-card" onclick="handleCardTap(this)">
+        <img class="product-card-img" src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=800" alt="Semi-permanent hair color" style="height:300px;" loading="lazy">
+        <div class="product-card-info">
+          <div class="product-card-brand">40+ Shades</div>
+          <div class="product-card-name">Adore Semi-Permanent Hair Color</div>
+          <div class="product-card-desc">No ammonia, no peroxide</div>
+          <div class="product-card-price">$3.99</div>
+        </div>
+        <div class="product-overlay">
+          <div class="overlay-brand">Damage-Free Color</div>
+          <div class="overlay-name">Adore Semi-Permanent Hair Color</div>
+          <div class="overlay-price">$3.99</div>
+          <div class="overlay-desc">No ammonia, no peroxide. 40+ vibrant shades. Deposits color without damage. Fades gradually &mdash; no harsh grow-out line.</div>
+          <div class="overlay-sizes"><strong>Shades:</strong> 40+ vibrant colors available</div>
+          <button class="reserve-trigger" onclick="event.stopPropagation(); showReserve(this)">Reserve at Star Beauty</button>
+          <div class="reserve-stores">
+            <div class="reserve-stores-label">Choose your store:</div>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 1 &mdash; Ashland Ave')">Star Beauty 1 &mdash; 1250 S Ashland Ave</button>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 2 &mdash; 87th St')">Star Beauty 2 &mdash; 3258 W 87th St</button>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 3 &mdash; 95th St')">Star Beauty 3 &mdash; 1637 E 95th St</button>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 4 &mdash; Chicago Ave')">Star Beauty 4 &mdash; 5400 W Chicago Ave</button>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 5 &mdash; Kedzie Ave')">Star Beauty 5 &mdash; 800 N Kedzie Ave</button>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 8 &mdash; North Ave')">Star Beauty 8 &mdash; 4937 W North Ave</button>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 9 &mdash; Stony Island')">Star Beauty 9 &mdash; 7546 S Stony Island Ave</button>
+            <div class="reserve-confirm"><p>Reserved at <strong></strong>. We&rsquo;ll have it ready &mdash; usually within the hour.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card" onclick="handleCardTap(this)">
+        <img class="product-card-img" src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=800" alt="Bigen powder hair color" style="height:300px;" loading="lazy">
+        <div class="product-card-info">
+          <div class="product-card-brand">Grey Coverage Legend</div>
+          <div class="product-card-name">Bigen #59 Powder Hair Color</div>
+          <div class="product-card-desc">Oriental Black, mix with water</div>
+          <div class="product-card-price">$3.99</div>
+        </div>
+        <div class="product-overlay">
+          <div class="overlay-brand">Grey Coverage Legend</div>
+          <div class="overlay-name">Bigen #59 Powder Hair Color</div>
+          <div class="overlay-price">$3.99</div>
+          <div class="overlay-desc">The grey coverage legend. Oriental Black shade. Mix with water, no developer needed. Covers greys in 20 minutes.</div>
+          <div class="overlay-sizes"><strong>Shade:</strong> #59 Oriental Black &middot; No developer needed</div>
+          <button class="reserve-trigger" onclick="event.stopPropagation(); showReserve(this)">Reserve at Star Beauty</button>
+          <div class="reserve-stores">
+            <div class="reserve-stores-label">Choose your store:</div>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 1 &mdash; Ashland Ave')">Star Beauty 1 &mdash; 1250 S Ashland Ave</button>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 2 &mdash; 87th St')">Star Beauty 2 &mdash; 3258 W 87th St</button>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 3 &mdash; 95th St')">Star Beauty 3 &mdash; 1637 E 95th St</button>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 4 &mdash; Chicago Ave')">Star Beauty 4 &mdash; 5400 W Chicago Ave</button>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 5 &mdash; Kedzie Ave')">Star Beauty 5 &mdash; 800 N Kedzie Ave</button>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 8 &mdash; North Ave')">Star Beauty 8 &mdash; 4937 W North Ave</button>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 9 &mdash; Stony Island')">Star Beauty 9 &mdash; 7546 S Stony Island Ave</button>
+            <div class="reserve-confirm"><p>Reserved at <strong></strong>. We&rsquo;ll have it ready &mdash; usually within the hour.</p></div>
+          </div>
+        </div>
+      </div>
+      <div class="product-card" onclick="handleCardTap(this)">
+        <img class="product-card-img" src="https://images.unsplash.com/photo-1560066984-138dadb4c035?w=800" alt="Edge wax and styling products" style="height:300px;" loading="lazy">
+        <div class="product-card-info">
+          <div class="product-card-brand">Chicago Staple</div>
+          <div class="product-card-name">Murray&rsquo;s Edgewax 4oz</div>
+          <div class="product-card-desc">Extreme hold, no white residue</div>
+          <div class="product-card-price">$3.99</div>
+        </div>
+        <div class="product-overlay">
+          <div class="overlay-brand">Chicago Staple</div>
+          <div class="overlay-name">Murray&rsquo;s Edgewax 4oz</div>
+          <div class="overlay-price">$3.99</div>
+          <div class="overlay-desc">Extreme hold for edges and sleek styles. No white residue. Lasts through humidity and sweat. A Chicago staple.</div>
+          <div class="overlay-sizes"><strong>Size:</strong> 4oz &middot; Extreme hold formula</div>
+          <button class="reserve-trigger" onclick="event.stopPropagation(); showReserve(this)">Reserve at Star Beauty</button>
+          <div class="reserve-stores">
+            <div class="reserve-stores-label">Choose your store:</div>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 1 &mdash; Ashland Ave')">Star Beauty 1 &mdash; 1250 S Ashland Ave</button>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 2 &mdash; 87th St')">Star Beauty 2 &mdash; 3258 W 87th St</button>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 3 &mdash; 95th St')">Star Beauty 3 &mdash; 1637 E 95th St</button>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 4 &mdash; Chicago Ave')">Star Beauty 4 &mdash; 5400 W Chicago Ave</button>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 5 &mdash; Kedzie Ave')">Star Beauty 5 &mdash; 800 N Kedzie Ave</button>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 8 &mdash; North Ave')">Star Beauty 8 &mdash; 4937 W North Ave</button>
+            <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 9 &mdash; Stony Island')">Star Beauty 9 &mdash; 7546 S Stony Island Ave</button>
+            <div class="reserve-confirm"><p>Reserved at <strong></strong>. We&rsquo;ll have it ready &mdash; usually within the hour.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ 05 — HAIR CARE ════ -->
+<section class="sale-section fade-in" id="care">
+  <div class="section-overline">05 &mdash; Hair Care</div>
+  <div class="grid-stagger-three">
+    <div class="product-card" onclick="handleCardTap(this)">
+      <img class="product-card-img" src="https://images.unsplash.com/photo-1611432532775-f7870edd093d?w=800" alt="ORS olive oil sheen spray" style="height:320px;" loading="lazy">
+      <div class="product-card-info">
+        <div class="product-card-brand">Daily Essential</div>
+        <div class="product-card-name">ORS Olive Oil Sheen Spray 10oz</div>
+        <div class="product-card-desc">Lightweight sheen, no buildup</div>
+        <div class="product-card-price">$4.99</div>
+      </div>
+      <div class="product-overlay">
+        <div class="overlay-brand">Daily Essential</div>
+        <div class="overlay-name">ORS Olive Oil Sheen Spray 10oz</div>
+        <div class="overlay-price">$4.99</div>
+        <div class="overlay-desc">Lightweight sheen without buildup. Olive oil formula moisturizes and adds shine. Safe for natural and relaxed hair.</div>
+        <div class="overlay-sizes"><strong>Size:</strong> 10oz spray &middot; Olive oil formula</div>
+        <button class="reserve-trigger" onclick="event.stopPropagation(); showReserve(this)">Reserve at Star Beauty</button>
+        <div class="reserve-stores">
+          <div class="reserve-stores-label">Choose your store:</div>
+          <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 1 &mdash; Ashland Ave')">Star Beauty 1 &mdash; 1250 S Ashland Ave</button>
+          <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 2 &mdash; 87th St')">Star Beauty 2 &mdash; 3258 W 87th St</button>
+          <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 3 &mdash; 95th St')">Star Beauty 3 &mdash; 1637 E 95th St</button>
+          <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 4 &mdash; Chicago Ave')">Star Beauty 4 &mdash; 5400 W Chicago Ave</button>
+          <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 5 &mdash; Kedzie Ave')">Star Beauty 5 &mdash; 800 N Kedzie Ave</button>
+          <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 8 &mdash; North Ave')">Star Beauty 8 &mdash; 4937 W North Ave</button>
+          <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 9 &mdash; Stony Island')">Star Beauty 9 &mdash; 7546 S Stony Island Ave</button>
+          <div class="reserve-confirm"><p>Reserved at <strong></strong>. We&rsquo;ll have it ready &mdash; usually within the hour.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="product-card" onclick="handleCardTap(this)">
+      <img class="product-card-img" src="https://images.unsplash.com/photo-1583361704493-d4d4f6ff8420?w=800" alt="Star Care batana oil" style="height:320px;" loading="lazy">
+      <div class="product-card-info">
+        <div class="product-card-brand">Star Exclusive</div>
+        <div class="product-card-name">Star Care Batana Oil/Butter</div>
+        <div class="product-card-desc">Pure batana oil from Honduras</div>
+        <div class="product-card-price">$6.99</div>
+      </div>
+      <div class="product-overlay">
+        <div class="overlay-brand">Star Exclusive</div>
+        <div class="overlay-name">Star Care Batana Oil/Butter</div>
+        <div class="overlay-price">$6.99</div>
+        <div class="overlay-desc">Our house brand. Pure batana oil from Honduras. Promotes thickness, repairs damage, adds deep moisture. A Star Beauty exclusive.</div>
+        <div class="overlay-sizes"><strong>Exclusive:</strong> Only at Star Beauty locations</div>
+        <button class="reserve-trigger" onclick="event.stopPropagation(); showReserve(this)">Reserve at Star Beauty</button>
+        <div class="reserve-stores">
+          <div class="reserve-stores-label">Choose your store:</div>
+          <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 1 &mdash; Ashland Ave')">Star Beauty 1 &mdash; 1250 S Ashland Ave</button>
+          <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 2 &mdash; 87th St')">Star Beauty 2 &mdash; 3258 W 87th St</button>
+          <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 3 &mdash; 95th St')">Star Beauty 3 &mdash; 1637 E 95th St</button>
+          <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 4 &mdash; Chicago Ave')">Star Beauty 4 &mdash; 5400 W Chicago Ave</button>
+          <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 5 &mdash; Kedzie Ave')">Star Beauty 5 &mdash; 800 N Kedzie Ave</button>
+          <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 8 &mdash; North Ave')">Star Beauty 8 &mdash; 4937 W North Ave</button>
+          <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 9 &mdash; Stony Island')">Star Beauty 9 &mdash; 7546 S Stony Island Ave</button>
+          <div class="reserve-confirm"><p>Reserved at <strong></strong>. We&rsquo;ll have it ready &mdash; usually within the hour.</p></div>
+        </div>
+      </div>
+    </div>
+    <div class="product-card" onclick="handleCardTap(this)">
+      <img class="product-card-img" src="https://images.unsplash.com/photo-1526047932273-341f2a7631f9?w=800" alt="Jamaican Mango & Lime island oil" style="height:320px;" loading="lazy">
+      <div class="product-card-info">
+        <div class="product-card-brand">Multi-Purpose</div>
+        <div class="product-card-name">Jamaican Mango &amp; Lime Island Oil 8oz</div>
+        <div class="product-card-desc">Coconut and castor oil blend</div>
+        <div class="product-card-price">$3.99</div>
+      </div>
+      <div class="product-overlay">
+        <div class="overlay-brand">Multi-Purpose</div>
+        <div class="overlay-name">Jamaican Mango &amp; Lime Island Oil 8oz</div>
+        <div class="overlay-price">$3.99</div>
+        <div class="overlay-desc">Multi-purpose island oil. Coconut and castor oil blend. Seals in moisture, reduces breakage. Great for protective styles.</div>
+        <div class="overlay-sizes"><strong>Size:</strong> 8oz &middot; Coconut + castor oil blend</div>
+        <button class="reserve-trigger" onclick="event.stopPropagation(); showReserve(this)">Reserve at Star Beauty</button>
+        <div class="reserve-stores">
+          <div class="reserve-stores-label">Choose your store:</div>
+          <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 1 &mdash; Ashland Ave')">Star Beauty 1 &mdash; 1250 S Ashland Ave</button>
+          <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 2 &mdash; 87th St')">Star Beauty 2 &mdash; 3258 W 87th St</button>
+          <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 3 &mdash; 95th St')">Star Beauty 3 &mdash; 1637 E 95th St</button>
+          <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 4 &mdash; Chicago Ave')">Star Beauty 4 &mdash; 5400 W Chicago Ave</button>
+          <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 5 &mdash; Kedzie Ave')">Star Beauty 5 &mdash; 800 N Kedzie Ave</button>
+          <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 8 &mdash; North Ave')">Star Beauty 8 &mdash; 4937 W North Ave</button>
+          <button class="store-btn" onclick="event.stopPropagation(); confirmReserve(this, 'Star Beauty 9 &mdash; Stony Island')">Star Beauty 9 &mdash; 7546 S Stony Island Ave</button>
+          <div class="reserve-confirm"><p>Reserved at <strong></strong>. We&rsquo;ll have it ready &mdash; usually within the hour.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════ BOTTOM CTA ════ -->
+<section class="bottom-cta">
+  <div class="bottom-cta-inner">
+    <h2 class="bottom-cta-headline">Available at all seven<br>Star Beauty locations.</h2>
+    <div class="bottom-cta-stores">
+      <div>
+        <div class="bottom-store-name">Star Beauty 1</div>
+        <div class="bottom-store-address">1250 S Ashland Ave, Chicago, IL 60608</div>
+      </div>
+      <div>
+        <div class="bottom-store-name">Star Beauty 2</div>
+        <div class="bottom-store-address">3258 W 87th St, Chicago, IL 60652</div>
+      </div>
+      <div>
+        <div class="bottom-store-name">Star Beauty 3</div>
+        <div class="bottom-store-address">1637 E 95th St, Chicago, IL 60617</div>
+      </div>
+      <div>
+        <div class="bottom-store-name">Star Beauty 4</div>
+        <div class="bottom-store-address">5400 W Chicago Ave, Chicago, IL 60651</div>
+      </div>
+      <div>
+        <div class="bottom-store-name">Star Beauty 5</div>
+        <div class="bottom-store-address">800 N Kedzie Ave, Chicago, IL 60651</div>
+      </div>
+      <div>
+        <div class="bottom-store-name">Star Beauty 8</div>
+        <div class="bottom-store-address">4937 W North Ave, Chicago, IL 60639</div>
+      </div>
+      <div>
+        <div class="bottom-store-name">Star Beauty 9</div>
+        <div class="bottom-store-address">7546 S Stony Island Ave, Chicago, IL 60649</div>
+      </div>
+    </div>
+    <a href="stores.html" class="bottom-cta-link">Find your store &rarr;</a>
+  </div>
+</section>
+
+<!-- ════ FOOTER ════ -->
+<footer>
+  <div class="footer-signup">
+    <h3 class="footer-signup-headline">New drops, real prices, no&nbsp;spam.</h3>
+    <form class="footer-form" id="footerForm" onsubmit="handleFooterSignup(event)">
+      <input type="email" placeholder="Email address" required aria-label="Email address">
+      <input type="tel" placeholder="Phone (optional)" aria-label="Phone number">
+      <button type="submit" class="btn-primary">Send me my code</button>
+    </form>
+    <div class="footer-trust">We text 2&ndash;4 times a month. We never sell your info. Reply STOP anytime.</div>
+  </div>
+
+  <div class="footer-locations">
+    <div>
+      <div class="footer-location-name">Star Beauty 1</div>
+      <div class="footer-location-address">1250 S Ashland Ave<br>Chicago, IL 60608</div>
+      <div class="footer-location-phone"><a href="tel:3122852141">(312) 285-2141</a></div>
+    </div>
+    <div>
+      <div class="footer-location-name">Star Beauty 2</div>
+      <div class="footer-location-address">3258 W 87th St<br>Chicago, IL 60652</div>
+      <div class="footer-location-phone"><a href="tel:7734345745">(773) 434-5745</a></div>
+    </div>
+    <div>
+      <div class="footer-location-name">Star Beauty 3</div>
+      <div class="footer-location-address">1637 E 95th St<br>Chicago, IL 60617</div>
+      <div class="footer-location-phone"><a href="tel:7739027277">(773) 902-7277</a></div>
+    </div>
+    <div>
+      <div class="footer-location-name">Star Beauty 4</div>
+      <div class="footer-location-address">5400 W Chicago Ave<br>Chicago, IL 60651</div>
+      <div class="footer-location-phone"><a href="tel:7739210995">(773) 921-0995</a></div>
+    </div>
+    <div>
+      <div class="footer-location-name">Star Beauty 5</div>
+      <div class="footer-location-address">800 N Kedzie Ave<br>Chicago, IL 60651</div>
+      <div class="footer-location-phone"><a href="tel:7736384411">(773) 638-4411</a></div>
+    </div>
+    <div>
+      <div class="footer-location-name">Star Beauty 8</div>
+      <div class="footer-location-address">4937 W North Ave<br>Chicago, IL 60639</div>
+      <div class="footer-location-phone"><a href="tel:7733946040">(773) 394-6040</a></div>
+    </div>
+    <div>
+      <div class="footer-location-name">Star Beauty 9</div>
+      <div class="footer-location-address">7546 S Stony Island Ave<br>Chicago, IL 60649</div>
+      <div class="footer-location-phone"><a href="tel:7739664704">(773) 966-4704</a></div>
+    </div>
+  </div>
+
+  <div class="footer-hours">
+    <strong>Hours</strong><br>
+    Mon&ndash;Sat 9 AM &ndash; 8 PM &nbsp;&middot;&nbsp; Sun 10 AM &ndash; 6 PM
+  </div>
+
+  <div class="footer-social">
+    <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+    <a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a>
+    <a href="https://tiktok.com" target="_blank" rel="noopener">TikTok</a>
+  </div>
+
+  <div class="footer-bottom">
+    <div class="footer-copy">&copy; 2026 Star Beauty Supply &middot; 7 locations across Chicago</div>
+    <div class="footer-credit">Built by <a href="https://cy-studios.com" target="_blank" rel="noopener">CY Studios</a></div>
+  </div>
+</footer>
+
+<!-- ════ MODAL ════ -->
+<div class="modal-backdrop" id="discountModal">
+  <div class="modal">
+    <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
+    <div class="modal-form-content" id="modalFormContent">
+      <h3 class="modal-headline">5% off, on the house.</h3>
+      <p class="modal-sub">Join the list. New drops, real sales, no spam &mdash; texted straight to you when it matters.</p>
+      <form id="modalForm" onsubmit="handleModalSubmit(event)">
+        <div class="modal-field">
+          <input type="email" id="modalEmail" placeholder="Email address" required>
+          <div class="modal-error" id="emailError">Please enter a valid email address.</div>
+        </div>
+        <div class="modal-field">
+          <input type="tel" id="modalPhone" placeholder="Phone number">
+          <div class="modal-error" id="phoneError">Please enter a valid 10-digit US phone number.</div>
+        </div>
+        <div class="modal-checkbox">
+          <input type="checkbox" id="modalSms">
+          <label for="modalSms">Text me deals (2&ndash;4/month, reply STOP anytime)</label>
+        </div>
+        <button type="submit" class="btn-primary modal-submit">Send me my code</button>
+      </form>
+      <button class="modal-dismiss" onclick="closeModal()">Maybe later</button>
+    </div>
+    <div class="modal-success" id="modalSuccess">
+      <h3 class="modal-headline">You&rsquo;re in.</h3>
+      <div class="modal-success-code" id="discountCode">MOM5OFF</div>
+      <button class="modal-copy-btn" onclick="copyCode()">
+        <span id="copyLabel">Copy code</span>
+      </button>
+      <p class="modal-success-note">Show at any Star Beauty location &mdash; or use online when we launch.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ════ CHAT FAB ════ -->
+<button class="chat-fab" id="chatFab" onclick="toggleChat()" aria-label="Open Star Stylist chat">S</button>
+
+<!-- ════ CHAT PANEL ════ -->
+<div class="chat-panel" id="chatPanel">
+  <div class="chat-header">
+    <span class="chat-header-title">Star Stylist</span>
+    <button class="chat-close" onclick="toggleChat()" aria-label="Close chat">&times;</button>
+  </div>
+  <div class="chat-body" id="chatBody"></div>
+  <div class="chat-input-area">
+    <input type="text" class="chat-input" id="chatInput" placeholder="Type a message&hellip;" disabled>
+    <button class="chat-send" id="chatSendBtn" onclick="sendChatMessage()" disabled aria-label="Send">&uarr;</button>
+  </div>
+  <div class="chat-footer-bar">Powered by Star Beauty</div>
+</div>
+
+<script>
+/* ── MOBILE MENU ── */
+function toggleMobileMenu() {
+  var menu = document.getElementById('mobileMenu');
+  var btn = document.getElementById('navHamburger');
+  menu.classList.toggle('active');
+  btn.classList.toggle('active');
+  document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : '';
+}
+function closeMobileMenu() {
+  document.getElementById('mobileMenu').classList.remove('active');
+  document.getElementById('navHamburger').classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+/* ── MODAL ── */
+function openModal() {
+  document.getElementById('discountModal').classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('discountModal').classList.remove('active');
+  document.body.style.overflow = '';
+  sessionStorage.setItem('sb_modal_dismissed', '1');
+}
+function handleModalSubmit(e) {
+  e.preventDefault();
+  var email = document.getElementById('modalEmail').value.trim();
+  var phone = document.getElementById('modalPhone').value.trim();
+  var valid = true;
+
+  var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(email)) {
+    document.getElementById('emailError').classList.add('visible');
+    valid = false;
+  } else {
+    document.getElementById('emailError').classList.remove('visible');
+  }
+
+  if (phone) {
+    var digits = phone.replace(/\D/g, '');
+    if (digits.length !== 10) {
+      document.getElementById('phoneError').classList.add('visible');
+      valid = false;
+    } else {
+      document.getElementById('phoneError').classList.remove('visible');
+    }
+  } else {
+    document.getElementById('phoneError').classList.remove('visible');
+  }
+
+  if (!valid) return;
+
+  document.getElementById('modalFormContent').classList.add('hidden');
+  document.getElementById('modalSuccess').classList.add('active');
+  sessionStorage.setItem('sb_modal_dismissed', '1');
+}
+function copyCode() {
+  navigator.clipboard.writeText('MOM5OFF').then(function() {
+    document.getElementById('copyLabel').textContent = 'Copied!';
+    setTimeout(function() { document.getElementById('copyLabel').textContent = 'Copy code'; }, 2000);
+  });
+}
+
+setTimeout(function() {
+  if (!sessionStorage.getItem('sb_modal_dismissed')) {
+    openModal();
+  }
+}, 2000);
+
+document.getElementById('discountModal').addEventListener('click', function(e) {
+  if (e.target === this) closeModal();
+});
+
+/* ── FOOTER SIGNUP ── */
+function handleFooterSignup(e) {
+  e.preventDefault();
+  var form = e.target;
+  var btn = form.querySelector('.btn-primary');
+  btn.textContent = 'YOU\u2019RE IN \u2014 CODE: MOM5OFF';
+  btn.style.background = 'var(--accent-secondary)';
+  btn.style.color = 'var(--bg-primary)';
+  btn.disabled = true;
+}
+
+/* ── INTERACTIVE FLYER: CARD TAP (MOBILE) ── */
+var currentActiveCard = null;
+
+function handleCardTap(card) {
+  if (window.innerWidth > 900) return; // Desktop uses hover
+  if (currentActiveCard && currentActiveCard !== card) {
+    currentActiveCard.classList.remove('active');
+    // Reset reserve state on previous card
+    var prevReserve = currentActiveCard.querySelector('.reserve-stores');
+    if (prevReserve) prevReserve.classList.remove('visible');
+  }
+  card.classList.toggle('active');
+  currentActiveCard = card.classList.contains('active') ? card : null;
+}
+
+/* ── RESERVE FLOW ── */
+function showReserve(btn) {
+  var stores = btn.nextElementSibling;
+  stores.classList.toggle('visible');
+}
+
+function confirmReserve(storeBtn, storeName) {
+  var container = storeBtn.closest('.reserve-stores');
+  var confirm = container.querySelector('.reserve-confirm');
+  confirm.querySelector('strong').innerHTML = storeName;
+  confirm.classList.add('visible');
+  // Hide the store buttons
+  var btns = container.querySelectorAll('.store-btn');
+  btns.forEach(function(b) { b.style.display = 'none'; });
+  container.querySelector('.reserve-stores-label').style.display = 'none';
+  // Hide the reserve trigger
+  var trigger = container.previousElementSibling;
+  if (trigger && trigger.classList.contains('reserve-trigger')) {
+    trigger.style.display = 'none';
+  }
+}
+
+/* ── CHAT ── */
+var chatStep = 0;
+var chatConversationDone = false;
+
+function toggleChat() {
+  var panel = document.getElementById('chatPanel');
+  var fab = document.getElementById('chatFab');
+  if (panel.classList.contains('open')) {
+    panel.classList.remove('open');
+    fab.style.display = 'flex';
+  } else {
+    panel.classList.add('open');
+    fab.style.display = 'none';
+    if (chatStep === 0) initChat();
+  }
+}
+
+function initChat() {
+  var body = document.getElementById('chatBody');
+  body.innerHTML = '';
+  addBotMessage('Hey! I\u2019m your Star Stylist. I can help you find products, check what\u2019s on sale, or point you to the nearest store.');
+  setTimeout(function() {
+    addChips(['What\u2019s on sale?', 'Help me pick a wig', 'Closest store?']);
+  }, 400);
+  chatStep = 1;
+}
+
+function addBotMessage(text) {
+  var body = document.getElementById('chatBody');
+  var div = document.createElement('div');
+  div.className = 'chat-msg bot';
+  div.textContent = text;
+  body.appendChild(div);
+  body.scrollTop = body.scrollHeight;
+}
+
+function addUserMessage(text) {
+  var body = document.getElementById('chatBody');
+  var div = document.createElement('div');
+  div.className = 'chat-msg user';
+  div.textContent = text;
+  body.appendChild(div);
+  body.scrollTop = body.scrollHeight;
+}
+
+function addChips(chips) {
+  var body = document.getElementById('chatBody');
+  var container = document.createElement('div');
+  container.className = 'chat-chips';
+  chips.forEach(function(text) {
+    var btn = document.createElement('button');
+    btn.className = 'chat-chip';
+    btn.textContent = text;
+    btn.addEventListener('click', function() { handleChipClick(text, container); });
+    container.appendChild(btn);
+  });
+  body.appendChild(container);
+  body.scrollTop = body.scrollHeight;
+}
+
+function showTyping() {
+  var body = document.getElementById('chatBody');
+  var typing = document.createElement('div');
+  typing.className = 'chat-typing';
+  typing.id = 'chatTyping';
+  typing.innerHTML = '<span></span><span></span><span></span>';
+  body.appendChild(typing);
+  body.scrollTop = body.scrollHeight;
+}
+
+function hideTyping() {
+  var el = document.getElementById('chatTyping');
+  if (el) el.remove();
+}
+
+function addReserveButton() {
+  var body = document.getElementById('chatBody');
+  var btn = document.createElement('button');
+  btn.className = 'btn-primary chat-reserve-btn';
+  btn.textContent = 'Reserve it';
+  btn.style.fontSize = '13px';
+  btn.style.padding = '10px 24px';
+  btn.addEventListener('click', function() {
+    btn.remove();
+    handleReserve();
+  });
+  body.appendChild(btn);
+  body.scrollTop = body.scrollHeight;
+}
+
+function handleChipClick(text, container) {
+  container.remove();
+  if (text === 'Help me pick a wig') {
+    addUserMessage('I have a wedding in 3 weeks. Need a wig that\u2019s elegant but not too formal.');
+    showTyping();
+    setTimeout(function() {
+      hideTyping();
+      addBotMessage('Congrats! For elegant-but-relaxed, our Gold Luster body wave bundles ($69.99 starting) photograph beautifully. If you want ready-to-wear, the Mane Concept 15A is a clean $34.99 pick. Want me to check stock near you?');
+      setTimeout(function() {
+        addChips(['Yes, near 87th.']);
+      }, 300);
+      chatStep = 2;
+    }, 600);
+  } else if (text === 'Yes, near 87th.') {
+    addUserMessage('Yes, near 87th.');
+    showTyping();
+    setTimeout(function() {
+      hideTyping();
+      addBotMessage('Star Beauty 2 on 87th & Kedzie has both. Open till 8 PM tonight. Want me to hold one?');
+      setTimeout(function() {
+        addReserveButton();
+      }, 300);
+      chatStep = 3;
+    }, 600);
+  } else if (text === 'What\u2019s on sale?') {
+    addUserMessage('What\u2019s on sale?');
+    showTyping();
+    setTimeout(function() {
+      hideTyping();
+      addBotMessage('The Mom Sale is live through June! Gold Luster bundles from $69.99, X-Pression braids at $2.99/ea, Adore colors for $3.99. Want the full list or help picking something specific?');
+    }, 600);
+  } else if (text === 'Closest store?') {
+    addUserMessage('Closest store?');
+    showTyping();
+    setTimeout(function() {
+      hideTyping();
+      addBotMessage('We\u2019ve got 7 locations across the South and West sides. Star Beauty 1 is at 1250 S Ashland, Star Beauty 2 at 3258 W 87th, and five more. All open Mon\u2013Sat 9\u20138, Sun 10\u20136. Which neighborhood are you in?');
+    }, 600);
+  }
+}
+
+function handleReserve() {
+  addUserMessage('Reserve it');
+  showTyping();
+  setTimeout(function() {
+    hideTyping();
+    addBotMessage('Got it. We\u2019ll text when it\u2019s ready \u2014 usually within the hour. Anything else?');
+    chatConversationDone = true;
+    document.getElementById('chatInput').disabled = true;
+    document.getElementById('chatSendBtn').disabled = true;
+  }, 600);
+}
+
+/* ── SCROLL ANIMATIONS ── */
+function handleScrollAnimations() {
+  var items = document.querySelectorAll('.fade-in');
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  items.forEach(function(item) { observer.observe(item); });
+}
+handleScrollAnimations();
+</script>
+</body>
+</html>

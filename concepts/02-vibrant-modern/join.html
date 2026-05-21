@@ -1,0 +1,884 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Join the List — Star Beauty Supply</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Outfit:wght@300;400;600&family=Anybody:wght@400;900&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg-primary: #0C0A09;
+  --bg-secondary: #1C1917;
+  --fg-primary: #FAFAF9;
+  --fg-secondary: #D6D3D1;
+  --fg-muted: #78716C;
+  --accent-primary: #F97316;
+  --accent-secondary: #FB923C;
+  --accent-hot: #EF4444;
+  --accent-gold: #FBBF24;
+  --surface: #292524;
+  --border: #44403C;
+  --ease-bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-entrance: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg-primary);
+  color: var(--fg-primary);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 28px;
+  letter-spacing: 0.01em;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ─── NAV ─── */
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: rgba(12, 10, 9, 0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  padding: 0 clamp(20px, 4vw, 64px);
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand {
+  font-family: 'Sora', sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 0.08em;
+  color: var(--fg-primary);
+  text-decoration: none;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.nav-brand .dot {
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  background: var(--accent-primary);
+  border-radius: 50%;
+  margin-left: 3px;
+  margin-bottom: 8px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  list-style: none;
+}
+
+.nav-links a {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: var(--fg-secondary);
+  text-decoration: none;
+  transition: color 200ms ease-out;
+}
+
+.nav-links a:hover { color: var(--fg-primary); }
+
+.nav-links .sale-link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sale-dot {
+  width: 7px;
+  height: 7px;
+  background: var(--accent-hot);
+  border-radius: 50%;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.3); }
+}
+
+.nav-back {
+  font-weight: 600 !important;
+  color: var(--fg-primary) !important;
+}
+
+/* ─── HERO ─── */
+.join-hero {
+  padding: clamp(140px, 18vh, 200px) clamp(20px, 4vw, 64px) clamp(60px, 8vh, 100px);
+  position: relative;
+  overflow: hidden;
+}
+
+.join-hero::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  right: -5%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(249, 115, 22, 0.07) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.join-hero h1 {
+  font-family: 'Sora', sans-serif;
+  font-weight: 800;
+  font-size: clamp(48px, 6vw, 80px);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--fg-primary);
+  margin-bottom: 20px;
+  max-width: 700px;
+}
+
+.join-hero h1 .accent { color: var(--accent-primary); }
+
+.join-hero .sub {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  font-size: 20px;
+  line-height: 32px;
+  color: var(--fg-secondary);
+  max-width: 480px;
+  margin-bottom: 48px;
+}
+
+/* ─── FORM ─── */
+.join-form-wrap {
+  max-width: 520px;
+  margin-bottom: clamp(80px, 10vh, 120px);
+}
+
+.join-form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.join-form input {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 18px 22px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: var(--fg-primary);
+  outline: none;
+  transition: border-color 200ms ease-out;
+  width: 100%;
+}
+
+.join-form input::placeholder { color: var(--fg-muted); }
+.join-form input:focus { border-color: var(--accent-primary); }
+
+.join-form .input-error {
+  border-color: var(--accent-hot) !important;
+}
+
+.error-msg {
+  font-size: 13px;
+  color: var(--accent-hot);
+  margin-top: -6px;
+  display: none;
+}
+
+.error-msg.show { display: block; }
+
+.btn-primary {
+  display: inline-block;
+  background: var(--accent-primary);
+  color: var(--bg-primary);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.02em;
+  padding: 18px 40px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  transition: background 250ms var(--ease-bounce), transform 250ms var(--ease-bounce), box-shadow 250ms var(--ease-bounce);
+  margin-top: 8px;
+}
+
+.btn-primary:hover {
+  background: var(--accent-secondary);
+  transform: scale(1.02);
+  box-shadow: 0 4px 16px rgba(249, 115, 22, 0.3);
+}
+
+.join-success {
+  display: none;
+  text-align: left;
+  padding: 32px 0;
+}
+
+.join-success.show { display: block; }
+
+.join-success .code-reveal {
+  font-family: 'Sora', sans-serif;
+  font-weight: 800;
+  font-size: 48px;
+  letter-spacing: 0.06em;
+  color: var(--accent-primary);
+  text-shadow: 0 0 40px rgba(249, 115, 22, 0.4);
+  margin-bottom: 14px;
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+  0%, 100% { text-shadow: 0 0 32px rgba(249, 115, 22, 0.4); }
+  50% { text-shadow: 0 0 56px rgba(249, 115, 22, 0.6); }
+}
+
+.join-success p {
+  font-size: 17px;
+  line-height: 28px;
+  color: var(--fg-secondary);
+  margin-bottom: 20px;
+}
+
+.copy-btn {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 12px 28px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--fg-primary);
+  cursor: pointer;
+  transition: border-color 200ms ease-out;
+}
+
+.copy-btn:hover { border-color: var(--accent-primary); }
+
+/* ─── REASONS ─── */
+.reasons-section {
+  padding: 0 clamp(20px, 4vw, 64px) clamp(80px, 12vh, 140px);
+}
+
+.reason {
+  display: flex;
+  gap: clamp(20px, 4vw, 48px);
+  align-items: baseline;
+  padding: clamp(28px, 4vh, 48px) 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.reason:first-child { border-top: 1px solid var(--border); }
+
+.reason-num {
+  font-family: 'Anybody', sans-serif;
+  font-weight: 900;
+  font-size: clamp(48px, 6vw, 80px);
+  line-height: 1;
+  letter-spacing: -0.05em;
+  font-stretch: 75%;
+  color: var(--accent-primary);
+  flex-shrink: 0;
+  min-width: clamp(60px, 8vw, 100px);
+}
+
+.reason-text {
+  font-family: 'Sora', sans-serif;
+  font-weight: 600;
+  font-size: clamp(22px, 3vw, 36px);
+  line-height: clamp(28px, 3.6vw, 44px);
+  letter-spacing: -0.03em;
+  color: var(--fg-primary);
+}
+
+/* ─── TRUST ─── */
+.trust-section {
+  padding: clamp(40px, 6vh, 64px) clamp(20px, 4vw, 64px) clamp(80px, 12vh, 140px);
+}
+
+.trust-text {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 26px;
+  color: var(--fg-muted);
+  max-width: 560px;
+}
+
+/* ─── FOOTER ─── */
+.footer {
+  padding: clamp(40px, 6vh, 64px) clamp(20px, 4vw, 64px) 32px;
+  border-top: 1px solid var(--border);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.footer-copy {
+  font-size: 13px;
+  color: var(--fg-muted);
+}
+
+.footer-credit {
+  font-size: 13px;
+  color: var(--fg-muted);
+}
+
+.footer-credit a {
+  color: var(--fg-muted);
+  text-decoration: none;
+  transition: color 200ms ease-out;
+}
+.footer-credit a:hover { color: var(--accent-primary); }
+
+/* ─── CHAT ─── */
+.chat-fab {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 150;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--accent-primary);
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: var(--bg-primary);
+  box-shadow: 0 4px 16px rgba(249, 115, 22, 0.3);
+  animation: fab-pulse 2s ease-in-out infinite;
+  transition: transform 200ms ease-out;
+}
+
+.chat-fab:hover { transform: scale(1.08); }
+
+@keyframes fab-pulse {
+  0%, 100% { box-shadow: 0 4px 16px rgba(249, 115, 22, 0.3); transform: scale(1); }
+  50% { box-shadow: 0 4px 24px rgba(249, 115, 22, 0.5); transform: scale(1.05); }
+}
+
+.chat-fab.hidden { display: none; }
+
+.chat-panel {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  z-index: 160;
+  width: 380px;
+  height: 560px;
+  max-height: calc(100vh - 32px);
+  background: var(--bg-primary);
+  border: 1px solid var(--border);
+  border-radius: 16px 0 0 0;
+  display: none;
+  flex-direction: column;
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.4);
+  animation: chat-slide 400ms var(--ease-entrance);
+}
+
+.chat-panel.open { display: flex; }
+
+@keyframes chat-slide {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 2px solid var(--accent-primary);
+  flex-shrink: 0;
+}
+
+.chat-header-title {
+  font-family: 'Sora', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--fg-primary);
+}
+
+.chat-close {
+  background: none;
+  border: none;
+  color: var(--fg-muted);
+  font-size: 20px;
+  cursor: pointer;
+  padding: 4px;
+  transition: color 200ms ease-out;
+}
+
+.chat-close:hover { color: var(--fg-primary); }
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border) transparent;
+}
+
+.chat-msg {
+  max-width: 85%;
+  padding: 12px 16px;
+  font-size: 14px;
+  line-height: 21px;
+  animation: msg-in 400ms var(--ease-entrance);
+}
+
+@keyframes msg-in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.chat-msg.bot {
+  background: var(--surface);
+  border-radius: 8px;
+  color: var(--fg-primary);
+  align-self: flex-start;
+}
+
+.chat-msg.user {
+  background: var(--accent-primary);
+  color: var(--bg-primary);
+  border-radius: 8px;
+  align-self: flex-end;
+  font-weight: 600;
+}
+
+.chat-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.chat-chip {
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 8px 16px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  color: var(--fg-secondary);
+  cursor: pointer;
+  transition: border-color 200ms ease-out, color 200ms ease-out;
+}
+
+.chat-chip:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+.chat-chip:disabled {
+  opacity: 0.4;
+  cursor: default;
+  pointer-events: none;
+}
+
+.typing-indicator {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  padding: 12px 16px;
+  background: var(--surface);
+  border-radius: 8px;
+  align-self: flex-start;
+  max-width: 60px;
+}
+
+.typing-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--fg-muted);
+  border-radius: 50%;
+  animation: bounce-dot 1.2s ease-in-out infinite;
+}
+
+.typing-dot:nth-child(2) { animation-delay: 0.15s; }
+.typing-dot:nth-child(3) { animation-delay: 0.3s; }
+
+@keyframes bounce-dot {
+  0%, 60%, 100% { transform: translateY(0); }
+  30% { transform: translateY(-6px); }
+}
+
+.chat-reserve-btn {
+  display: inline-block;
+  margin-top: 10px;
+  background: var(--accent-primary);
+  color: var(--bg-primary);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  border: none;
+  cursor: pointer;
+  transition: background 250ms var(--ease-bounce), transform 250ms var(--ease-bounce);
+}
+
+.chat-reserve-btn:hover {
+  background: var(--accent-secondary);
+  transform: scale(1.04);
+}
+
+.chat-input-area {
+  display: flex;
+  gap: 8px;
+  padding: 14px 16px;
+  border-top: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.chat-input {
+  flex: 1;
+  background: var(--bg-secondary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-family: 'Outfit', sans-serif;
+  font-size: 14px;
+  color: var(--fg-primary);
+  outline: none;
+  transition: border-color 200ms ease-out;
+}
+
+.chat-input::placeholder { color: var(--fg-muted); }
+.chat-input:focus { border-color: var(--accent-primary); }
+
+.chat-send {
+  background: var(--accent-primary);
+  border: none;
+  border-radius: 8px;
+  width: 38px;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--bg-primary);
+  font-size: 16px;
+  transition: background 200ms ease-out;
+}
+
+.chat-send:hover { background: var(--accent-secondary); }
+
+.chat-footer {
+  text-align: center;
+  padding: 8px;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 10px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  border-top: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+/* ─── REVEAL ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 500ms var(--ease-entrance), transform 500ms var(--ease-entrance);
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 600px) {
+  .nav-links { gap: 18px; }
+  .reason { flex-direction: column; gap: 8px; }
+  .reason-num { min-width: unset; }
+  .chat-panel {
+    width: 100%;
+    height: 100vh;
+    max-height: 100vh;
+    border-radius: 0;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <a href="index.html" class="nav-brand">Star Beauty<span class="dot"></span></a>
+  <ul class="nav-links">
+    <li><a href="index.html#sale" class="sale-link"><span class="sale-dot"></span> Sale</a></li>
+    <li><a href="index.html#locations">Locations</a></li>
+    <li><a href="index.html" class="nav-back">&larr; Home</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="join-hero">
+  <h1 class="reveal"><span class="accent">5% off,</span><br>on the house.</h1>
+  <p class="sub reveal" style="transition-delay: 60ms">Join the list. We’ll text you when it matters.</p>
+
+  <div class="join-form-wrap reveal" style="transition-delay: 120ms">
+    <form class="join-form" id="joinForm">
+      <input type="email" placeholder="Email address" id="joinEmail" required>
+      <div class="error-msg" id="emailError">Enter a valid email address.</div>
+      <input type="tel" placeholder="Phone — (312) 555-0199" id="joinPhone">
+      <div class="error-msg" id="phoneError">Enter a valid US phone number.</div>
+      <input type="text" placeholder="First name (optional)" id="joinName">
+      <button type="submit" class="btn-primary">Send me my code</button>
+    </form>
+    <div class="join-success" id="joinSuccess">
+      <div class="code-reveal">MOM5OFF</div>
+      <p>Show this at any Star Beauty location or use it online. Valid through June 30, 2026.</p>
+      <button class="copy-btn" id="copyCode">Copy code</button>
+    </div>
+  </div>
+</section>
+
+<!-- REASONS -->
+<section class="reasons-section">
+  <div class="reason reveal">
+    <div class="reason-num">01</div>
+    <div class="reason-text">Members get the new drops first.</div>
+  </div>
+  <div class="reason reveal" style="transition-delay: 60ms">
+    <div class="reason-num">02</div>
+    <div class="reason-text">Texted-only sales—not on the site, not on socials.</div>
+  </div>
+  <div class="reason reveal" style="transition-delay: 120ms">
+    <div class="reason-num">03</div>
+    <div class="reason-text">$5 birthday treat, every single year.</div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="trust-section reveal">
+  <p class="trust-text">We’ll never sell your information. You’ll hear from us maybe twice a month—only when there’s something genuinely worth your time. Unsubscribe anytime, no questions asked. Star Beauty has served Chicago’s South and West sides since 1995. We’re not going anywhere.</p>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-bottom">
+    <div class="footer-copy">&copy; 2026 Star Beauty Supply. All rights reserved.</div>
+    <div class="footer-credit">A <a href="https://cy-studios.com" target="_blank" rel="noopener">CY Studios</a> concept</div>
+  </div>
+</footer>
+
+<!-- CHAT FAB -->
+<button class="chat-fab" id="chatFab" aria-label="Open chat">&#9733;</button>
+
+<!-- CHAT PANEL -->
+<div class="chat-panel" id="chatPanel">
+  <div class="chat-header">
+    <span class="chat-header-title">Ask Star</span>
+    <button class="chat-close" id="chatClose" aria-label="Close chat">&times;</button>
+  </div>
+  <div class="chat-messages" id="chatMessages">
+    <div class="chat-msg bot">Hey! I’m Star—your AI beauty assistant. What can I help you find today?</div>
+    <div class="chat-chips" id="chatChips">
+      <button class="chat-chip" data-chip="sale">What’s on sale?</button>
+      <button class="chat-chip" data-chip="wig">Help me pick a wig</button>
+      <button class="chat-chip" data-chip="store">Closest store?</button>
+    </div>
+  </div>
+  <div class="chat-input-area">
+    <input class="chat-input" id="chatInput" placeholder="Type a message…" disabled>
+    <button class="chat-send" id="chatSend" aria-label="Send" disabled>&#8593;</button>
+  </div>
+  <div class="chat-footer">Powered by Star Beauty</div>
+</div>
+
+<script>
+(function() {
+  // ── Reveal on scroll ──
+  const reveals = document.querySelectorAll('.reveal');
+  const revealObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        revealObs.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  reveals.forEach(el => revealObs.observe(el));
+
+  // ── Join Form ──
+  const joinForm = document.getElementById('joinForm');
+  const joinSuccess = document.getElementById('joinSuccess');
+  const copyCode = document.getElementById('copyCode');
+  const emailInput = document.getElementById('joinEmail');
+  const phoneInput = document.getElementById('joinPhone');
+  const emailError = document.getElementById('emailError');
+  const phoneError = document.getElementById('phoneError');
+
+  joinForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let valid = true;
+    const emailRe = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    emailError.classList.remove('show');
+    phoneError.classList.remove('show');
+    emailInput.classList.remove('input-error');
+    phoneInput.classList.remove('input-error');
+
+    if (!emailRe.test(emailInput.value)) {
+      emailError.classList.add('show');
+      emailInput.classList.add('input-error');
+      valid = false;
+    }
+
+    if (phoneInput.value && !/^[\d\s\-\(\)\+]{7,}$/.test(phoneInput.value)) {
+      phoneError.classList.add('show');
+      phoneInput.classList.add('input-error');
+      valid = false;
+    }
+
+    if (!valid) return;
+
+    joinForm.style.display = 'none';
+    joinSuccess.classList.add('show');
+  });
+
+  copyCode.addEventListener('click', () => {
+    navigator.clipboard.writeText('MOM5OFF').then(() => {
+      copyCode.textContent = 'Copied!';
+      setTimeout(() => { copyCode.textContent = 'Copy code'; }, 2000);
+    });
+  });
+
+  // ── Chat ──
+  const chatFab = document.getElementById('chatFab');
+  const chatPanel = document.getElementById('chatPanel');
+  const chatClose = document.getElementById('chatClose');
+  const chatMessages = document.getElementById('chatMessages');
+  const chatChips = document.getElementById('chatChips');
+
+  chatFab.addEventListener('click', () => {
+    chatPanel.classList.add('open');
+    chatFab.classList.add('hidden');
+  });
+
+  chatClose.addEventListener('click', () => {
+    chatPanel.classList.remove('open');
+    chatFab.classList.remove('hidden');
+  });
+
+  function addMsg(text, type, html) {
+    const div = document.createElement('div');
+    div.className = 'chat-msg ' + type;
+    if (html) div.innerHTML = text;
+    else div.textContent = text;
+    chatMessages.appendChild(div);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+    return div;
+  }
+
+  function showTyping() {
+    const div = document.createElement('div');
+    div.className = 'typing-indicator';
+    div.innerHTML = '<span class="typing-dot"></span><span class="typing-dot"></span><span class="typing-dot"></span>';
+    chatMessages.appendChild(div);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
+    return div;
+  }
+
+  let step = 0;
+
+  const scriptedFlow = [
+    {
+      user: 'I have a wedding in 3 weeks. Need a wig that’s elegant but not too formal.',
+      bot: 'Congrats! For elegant-but-relaxed, our Gold Luster body wave bundles ($69.99 starting) photograph beautifully. If you want ready-to-wear, the Mane Concept 15A is a clean $34.99 pick. Want me to check stock near you?'
+    },
+    {
+      user: 'Yes, near 87th.',
+      bot: 'Star Beauty 2 on 87th & Kedzie has both. Open till 8 PM tonight. Want me to hold one?',
+      reserve: true
+    },
+    {
+      user: null,
+      bot: 'Got it. We’ll text when it’s ready—usually within the hour. Anything else?'
+    }
+  ];
+
+  chatChips.addEventListener('click', (e) => {
+    const chip = e.target.closest('.chat-chip');
+    if (!chip) return;
+    chatChips.querySelectorAll('.chat-chip').forEach(c => c.disabled = true);
+    addMsg(scriptedFlow[0].user, 'user');
+    step = 0;
+    proceedScript();
+  });
+
+  function proceedScript() {
+    if (step >= scriptedFlow.length) return;
+    const s = scriptedFlow[step];
+    const typing = showTyping();
+    setTimeout(() => {
+      typing.remove();
+      if (s.reserve) {
+        const botHtml = s.bot + '<br><button class="chat-reserve-btn" id="reserveBtn">Reserve it</button>';
+        addMsg(botHtml, 'bot', true);
+        setTimeout(() => {
+          const btn = document.getElementById('reserveBtn');
+          if (btn) {
+            btn.addEventListener('click', () => {
+              btn.disabled = true;
+              btn.textContent = 'Reserved!';
+              btn.style.opacity = '0.6';
+              step++;
+              proceedScript();
+            });
+          }
+        }, 50);
+      } else {
+        addMsg(s.bot, 'bot');
+        if (step < scriptedFlow.length - 1) {
+          step++;
+          setTimeout(() => {
+            addMsg(scriptedFlow[step].user, 'user');
+            proceedScript();
+          }, 800);
+        }
+      }
+    }, 600);
+  }
+})();
+</script>
+</body>
+</html>

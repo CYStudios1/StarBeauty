@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Star Beauty Supply — Chicago's Beauty Authority</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;800&family=Outfit:wght@300;400;600&family=Anybody:wght@400;900&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        'star-bg': '#0C0A09',
+        'star-bg2': '#1C1917',
+        'star-fg': '#FAFAF9',
+        'star-fg2': '#D6D3D1',
+        'star-muted': '#78716C',
+        'star-orange': '#F97316',
+        'star-orange-light': '#FB923C',
+        'star-hot': '#EF4444',
+        'star-gold': '#FBBF24',
+        'star-surface': '#292524',
+        'star-border': '#44403C',
+      },
+      fontFamily: {
+        'sora': ['Sora', 'sans-serif'],
+        'outfit': ['Outfit', 'sans-serif'],
+        'anybody': ['Anybody', 'sans-serif'],
+      }
+    }
+  }
+}
+</script>
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+:root {
+  --bg-primary: #0C0A09;
+  --bg-secondary: #1C1917;
+  --fg-primary: #FAFAF9;
+  --fg-secondary: #D6D3D1;
+  --fg-muted: #78716C;
+  --accent-primary: #F97316;
+  --accent-secondary: #FB923C;
+  --accent-hot: #EF4444;
+  --accent-gold: #FBBF24;
+  --surface: #292524;
+  --border: #44403C;
+}
+
+body {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 400;
+  font-size: 17px;
+  line-height: 28px;
+  letter-spacing: 0.01em;
+  color: var(--fg-primary);
+  background: var(--bg-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  padding: 0 32px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(12, 10, 9, 0.88);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(68, 64, 60, 0.3);
+}
+.nav-brand {
+  font-family: 'Sora', sans-serif;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: -0.02em;
+  color: var(--fg-primary);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.nav-dot {
+  width: 8px; height: 8px;
+  background: var(--accent-primary);
+  border-radius: 50%;
+}
+.nav-links { display: flex; gap: 28px; align-items: center; }
+.nav-links a {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--fg-secondary);
+  text-decoration: none;
+  transition: color 200ms ease-out;
+}
+.nav-links a:hover { color: var(--accent-primary); }
+.sale-dot {
+  position: relative;
+}
+.sale-dot::after {
+  content: '';
+  position: absolute;
+  top: -2px; right: -8px;
+  width: 6px; height: 6px;
+  background: var(--accent-hot);
+  border-radius: 50%;
+}
+.nav-cta {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 13px;
+  color: var(--bg-primary);
+  background: var(--accent-primary);
+  padding: 8px 22px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: all 250ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.nav-cta:hover {
+  background: var(--accent-secondary);
+  transform: scale(1.03);
+  box-shadow: 0 4px 16px rgba(249,115,22,0.3);
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  background: none; border: none; cursor: pointer;
+  width: 32px; height: 32px; position: relative;
+}
+.hamburger span {
+  display: block; width: 22px; height: 2px;
+  background: var(--fg-primary);
+  position: absolute; left: 5px;
+  transition: all 250ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.hamburger span:nth-child(1) { top: 9px; }
+.hamburger span:nth-child(2) { top: 15px; }
+.hamburger span:nth-child(3) { top: 21px; }
+.hamburger.active span:nth-child(1) { top: 15px; transform: rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { top: 15px; transform: rotate(-45deg); }
+
+.mobile-nav {
+  display: none;
+  position: fixed;
+  top: 64px; left: 0; right: 0; bottom: 0;
+  background: var(--bg-primary);
+  z-index: 199;
+  padding: 32px;
+  flex-direction: column; gap: 8px;
+}
+.mobile-nav.open { display: flex; }
+.mobile-nav a {
+  font-family: 'Sora', sans-serif;
+  font-weight: 600;
+  font-size: 28px;
+  color: var(--fg-primary);
+  text-decoration: none;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--border);
+  transition: color 200ms;
+}
+.mobile-nav a:hover { color: var(--accent-primary); }
+
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: block; }
+  nav { padding: 0 20px; }
+}
+
+/* ── HERO ── */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: flex-end;
+  padding: 0 32px 64px;
+  overflow: hidden;
+}
+
+.hero-bg-img {
+  position: absolute;
+  top: 0; right: 0;
+  width: 58%;
+  height: 100%;
+  z-index: 1;
+}
+.hero-bg-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+}
+/* Fade left edge into bg */
+.hero-bg-img::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 55%; height: 100%;
+  background: linear-gradient(to right, var(--bg-primary), transparent);
+  z-index: 2;
+}
+/* Fade bottom */
+.hero-bg-img::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 45%;
+  background: linear-gradient(to top, var(--bg-primary), transparent);
+  z-index: 2;
+}
+
+/* Accent color block — overlapping compositional element */
+.hero-color-block {
+  position: absolute;
+  top: 130px;
+  right: 38%;
+  width: 170px;
+  height: 250px;
+  background: var(--accent-primary);
+  border-radius: 4px;
+  z-index: 3;
+  opacity: 0;
+  transform: translateY(40px) rotate(-2.5deg);
+  animation: blockReveal 700ms cubic-bezier(0.22, 1, 0.36, 1) 600ms forwards;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+}
+.hero-color-block .block-label {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: rgba(12,10,9,0.4);
+  margin-bottom: 4px;
+}
+.hero-color-block .block-number {
+  font-family: 'Anybody', sans-serif;
+  font-weight: 900;
+  font-size: 52px;
+  line-height: 52px;
+  letter-spacing: -0.05em;
+  color: var(--bg-primary);
+}
+.hero-color-block .block-caption {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  color: rgba(12,10,9,0.55);
+  margin-top: 2px;
+}
+
+/* Sale badge */
+.hero-badge {
+  position: absolute;
+  top: 96px;
+  right: 7%;
+  z-index: 4;
+  background: var(--accent-hot);
+  color: var(--fg-primary);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 10px 22px;
+  border-radius: 999px;
+  opacity: 0;
+  transform: scale(0.7) rotate(4deg);
+  animation: popIn 500ms cubic-bezier(0.34, 1.56, 0.64, 1) 1000ms forwards;
+}
+
+/* Keyframes */
+@keyframes blockReveal {
+  to { opacity: 1; transform: translateY(0) rotate(-2.5deg); }
+}
+@keyframes popIn {
+  to { opacity: 1; transform: scale(1) rotate(4deg); }
+}
+@keyframes fadeSlideUp {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Hero content */
+.hero-content {
+  position: relative;
+  z-index: 10;
+  max-width: 660px;
+  padding-bottom: 24px;
+}
+.hero-overline {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--accent-primary);
+  margin-bottom: 20px;
+  opacity: 0;
+  transform: translateY(14px);
+  animation: fadeSlideUp 500ms cubic-bezier(0.22, 1, 0.36, 1) 200ms forwards;
+}
+.hero-headline {
+  font-family: 'Sora', sans-serif;
+  font-weight: 800;
+  font-size: 84px;
+  line-height: 82px;
+  letter-spacing: -0.035em;
+  margin-bottom: 24px;
+  opacity: 0;
+  transform: translateY(28px);
+  animation: fadeSlideUp 650ms cubic-bezier(0.22, 1, 0.36, 1) 320ms forwards;
+}
+.hero-headline .line { display: block; }
+.hero-headline .accent { color: var(--accent-primary); }
+
+.hero-sub {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  color: var(--fg-secondary);
+  max-width: 430px;
+  margin-bottom: 36px;
+  opacity: 0;
+  transform: translateY(14px);
+  animation: fadeSlideUp 500ms cubic-bezier(0.22, 1, 0.36, 1) 520ms forwards;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+  flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(14px);
+  animation: fadeSlideUp 500ms cubic-bezier(0.22, 1, 0.36, 1) 660ms forwards;
+}
+
+/* Buttons */
+.btn-primary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--accent-primary);
+  color: var(--bg-primary);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600; font-size: 15px;
+  letter-spacing: 0.02em;
+  padding: 16px 36px;
+  border: none; border-radius: 999px;
+  cursor: pointer;
+  transition: all 250ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  text-decoration: none;
+}
+.btn-primary:hover {
+  background: var(--accent-secondary);
+  transform: scale(1.03);
+  box-shadow: 0 4px 20px rgba(249,115,22,0.35);
+}
+.btn-secondary {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: transparent;
+  color: var(--fg-primary);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600; font-size: 15px;
+  padding: 16px 36px;
+  border: 2px solid var(--border);
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 250ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  text-decoration: none;
+}
+.btn-secondary:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+  box-shadow: 0 0 0 1px var(--accent-primary);
+}
+.btn-ghost {
+  display: inline-flex; align-items: center; gap: 6px;
+  background: none; border: none;
+  color: var(--accent-primary);
+  font-family: 'Outfit', sans-serif;
+  font-weight: 600; font-size: 15px;
+  cursor: pointer; text-decoration: none;
+  position: relative; padding: 0;
+}
+.btn-ghost::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0;
+  width: 0; height: 2px;
+  background: var(--accent-secondary);
+  transition: width 250ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.btn-ghost:hover { color: var(--accent-secondary); }
+.btn-ghost:hover::after { width: 100%; }
+
+/* ── TICKER ── */
+.ticker {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 14px 0;
+  overflow: hidden;
+  background: var(--bg-secondary);
+  position: relative;
+  z-index: 10;
+}
+.ticker-track {
+  display: flex; gap: 40px;
+  animation: scroll 28s linear infinite;
+  white-space: nowrap;
+  width: max-content;
+}
+.ticker-track span {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 300; font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+  flex-shrink: 0;
+}
+.ticker-track .sep { color: var(--accent-primary); font-weight: 600; }
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1100px) {
+  .hero-headline { font-size: 64px; line-height: 64px; }
+  .hero-color-block { display: none; }
+  .hero-bg-img { width: 52%; }
+}
+@media (max-width: 768px) {
+  .hero {
+    min-height: auto;
+    padding: 0 24px 48px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .hero-bg-img {
+    position: relative;
+    width: calc(100% + 48px);
+    margin-left: -24px;
+    height: 55vh;
+    order: -1;
+  }
+  .hero-bg-img::before {
+    width: 100%; height: 30%;
+    background: linear-gradient(to bottom, var(--bg-primary), transparent);
+    top: 0; left: 0;
+  }
+  .hero-content { padding-bottom: 0; }
+  .hero-headline { font-size: 46px; line-height: 46px; }
+  .hero-sub { font-size: 16px; line-height: 26px; }
+  .hero-badge { top: 80px; right: 20px; font-size: 11px; padding: 8px 16px; }
+  .hero-color-block { display: none; }
+}
+@media (max-width: 480px) {
+  .hero { padding: 0 20px 40px; }
+  .hero-headline { font-size: 38px; line-height: 40px; }
+  .hero-bg-img {
+    width: calc(100% + 40px);
+    margin-left: -20px;
+    height: 45vh;
+  }
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  .hero-actions .btn-primary,
+  .hero-actions .btn-secondary { justify-content: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ NAVIGATION ═══ -->
+<nav>
+  <a href="index.html" class="nav-brand">STAR BEAUTY<span class="nav-dot"></span></a>
+  <div class="nav-links">
+    <a href="promo.html" class="sale-dot">Sale</a>
+    <a href="products.html">Products</a>
+    <a href="stores.html">Stores</a>
+    <a href="about.html">About</a>
+    <a href="join.html" class="nav-cta">Join the list</a>
+  </div>
+  <button class="hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-nav" id="mobileNav">
+  <a href="promo.html">Sale</a>
+  <a href="products.html">Products</a>
+  <a href="stores.html">Stores</a>
+  <a href="about.html">About</a>
+  <a href="join.html">Join the list</a>
+</div>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+  <!-- Background portrait -->
+  <div class="hero-bg-img">
+    <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=1200&q=80" alt="Woman with luminous skin and bold confidence" loading="eager">
+  </div>
+
+  <!-- Overlapping orange color block -->
+  <div class="hero-color-block">
+    <span class="block-label">Since</span>
+    <span class="block-number">1995</span>
+    <span class="block-caption">7 stores &amp; counting</span>
+  </div>
+
+  <!-- Floating sale badge -->
+  <div class="hero-badge">Mom Sale — Live Now</div>
+
+  <!-- Content -->
+  <div class="hero-content">
+    <p class="hero-overline">Chicago&#8217;s beauty authority</p>
+    <h1 class="hero-headline">
+      <span class="line">Real hair.</span>
+      <span class="line">Real prices.</span>
+      <span class="line"><span class="accent">No games.</span></span>
+    </h1>
+    <p class="hero-sub">Seven stores across Chicago&#8217;s South and West sides. From $2.99 braids to premium bundles &#8212; twenty-nine years of stocking exactly what you need.</p>
+    <div class="hero-actions">
+      <a href="promo.html" class="btn-primary">Shop the Mom Sale</a>
+      <a href="#quiz" class="btn-secondary">Find your match</a>
+    </div>
+  </div>
+</section>
+
+<!-- ═══ TICKER ═══ -->
+<div class="ticker">
+  <div class="ticker-track">
+    <span>Braids from $2.99</span><span class="sep">&middot;</span>
+    <span>Human hair bundles from $64.99</span><span class="sep">&middot;</span>
+    <span>7 Chicago locations</span><span class="sep">&middot;</span>
+    <span>Open Mon&#8211;Sat 9&#8211;8 &middot; Sun 10&#8211;6</span><span class="sep">&middot;</span>
+    <span>Mom Sale &#8212; May &amp; June 2026</span><span class="sep">&middot;</span>
+    <span>Family-owned since &#8217;95</span><span class="sep">&middot;</span>
+    <span>Free parking every location</span><span class="sep">&middot;</span>
+    <span>Braids from $2.99</span><span class="sep">&middot;</span>
+    <span>Human hair bundles from $64.99</span><span class="sep">&middot;</span>
+    <span>7 Chicago locations</span><span class="sep">&middot;</span>
+    <span>Open Mon&#8211;Sat 9&#8211;8 &middot; Sun 10&#8211;6</span><span class="sep">&middot;</span>
+    <span>Mom Sale &#8212; May &amp; June 2026</span><span class="sep">&middot;</span>
+    <span>Family-owned since &#8217;95</span><span class="sep">&middot;</span>
+    <span>Free parking every location</span><span class="sep">&middot;</span>
+  </div>
+</div>
+
+<script>
+function toggleNav() {
+  document.getElementById('hamburger').classList.toggle('active');
+  document.getElementById('mobileNav').classList.toggle('open');
+}
+</script>
+</body>
+</html>
