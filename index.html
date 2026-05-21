@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Star Beauty Supply &#8212; Website Concepts by CY Studios</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Fraunces:opsz,wght@9..144,300;9..144,400&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: #0C0A09;
+  color: #FAFAF9;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 24px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 56px;
+}
+
+.header h1 {
+  font-family: 'Fraunces', serif;
+  font-weight: 300;
+  font-size: 42px;
+  line-height: 48px;
+  letter-spacing: -0.02em;
+  margin-bottom: 12px;
+}
+
+.header p {
+  font-size: 16px;
+  color: #78716C;
+  max-width: 420px;
+  margin: 0 auto;
+  line-height: 26px;
+}
+
+.header .badge {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #78716C;
+  border: 1px solid #44403C;
+  padding: 6px 14px;
+  border-radius: 999px;
+  margin-bottom: 20px;
+}
+
+.concepts {
+  display: flex;
+  gap: 20px;
+  max-width: 1000px;
+  width: 100%;
+}
+
+.concept {
+  flex: 1;
+  border: 1px solid #44403C;
+  padding: 32px 28px;
+  text-decoration: none;
+  color: #FAFAF9;
+  transition: all 400ms ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.concept:hover {
+  border-color: #C8A97E;
+}
+
+.concept .number {
+  font-family: 'Fraunces', serif;
+  font-weight: 300;
+  font-size: 64px;
+  line-height: 1;
+  color: #292524;
+  margin-bottom: 20px;
+  transition: color 400ms ease-out;
+}
+
+.concept:hover .number {
+  color: #44403C;
+}
+
+.concept h2 {
+  font-family: 'Fraunces', serif;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 30px;
+  margin-bottom: 12px;
+}
+
+.concept .desc {
+  font-size: 14px;
+  line-height: 22px;
+  color: #D6D3D1;
+  margin-bottom: 24px;
+}
+
+.concept .link {
+  font-size: 13px;
+  font-weight: 500;
+  color: #C8A97E;
+  letter-spacing: 0.04em;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 400ms ease-out;
+}
+
+.concept:hover .link {
+  color: #FB923C;
+}
+
+.concept .link .arrow {
+  transition: transform 400ms ease-out;
+}
+
+.concept:hover .link .arrow {
+  transform: translateX(4px);
+}
+
+.concept .swatch {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 48px;
+  height: 48px;
+  opacity: 0.15;
+}
+
+/* Concept-specific accent colors */
+.concept-1 .swatch { background: #C8A97E; }
+.concept-2 .swatch { background: #F97316; }
+.concept-3 .swatch { background: #B85C38; }
+
+.concept-1:hover { border-color: #C8A97E; }
+.concept-2:hover { border-color: #F97316; }
+.concept-3:hover { border-color: #B85C38; }
+
+.concept-2 .link { color: #F97316; }
+.concept-3 .link { color: #B85C38; }
+.concept-2:hover .link { color: #FB923C; }
+.concept-3:hover .link { color: #D4763A; }
+
+.footer {
+  margin-top: 56px;
+  text-align: center;
+  font-size: 13px;
+  color: #78716C;
+}
+
+.footer a {
+  color: #9B8A7A;
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {
+  .concepts {
+    flex-direction: column;
+  }
+  .header h1 {
+    font-size: 32px;
+    line-height: 38px;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="badge">CY Studios &#183; Client Pitch</div>
+  <h1>Star Beauty Supply</h1>
+  <p>Three website concepts for Chicago&#8217;s family-owned beauty authority. Seven stores, twenty-nine years, one standard.</p>
+</div>
+
+<div class="concepts">
+  <a href="concepts/01-editorial-premium/index.html" class="concept concept-1">
+    <div class="swatch"></div>
+    <div class="number">01</div>
+    <h2>Editorial Premium</h2>
+    <p class="desc">Magazine-worthy sophistication. Warm gold, sharp serif typography, generous white space. Aesop meets the South Side.</p>
+    <span class="link">View concept <span class="arrow">&#8594;</span></span>
+  </a>
+
+  <a href="concepts/02-vibrant-modern/index.html" class="concept concept-2">
+    <div class="swatch"></div>
+    <div class="number">02</div>
+    <h2>Vibrant Modern</h2>
+    <p class="desc">Bold dark theme, orange-accented energy. Kinetic motion, layered compositions. TikTok-era beauty supply with personality.</p>
+    <span class="link">View concept <span class="arrow">&#8594;</span></span>
+  </a>
+
+  <a href="concepts/03-neighborhood-trusted/index.html" class="concept concept-3">
+    <div class="swatch"></div>
+    <div class="number">03</div>
+    <h2>Neighborhood Trusted</h2>
+    <p class="desc">Warm cream tones, terra cotta accents, friendly serif type. The website equivalent of walking into a store where they know your name.</p>
+    <span class="link">View concept <span class="arrow">&#8594;</span></span>
+  </a>
+</div>
+
+<div class="footer">
+  Built by <a href="#">CY Studios</a> &#183; 2026
+</div>
+
+</body>
+</html>
